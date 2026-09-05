@@ -545,7 +545,11 @@ class OpticalSARFusionModel(nn.Module):
         # Top-k predictions
         top_vals, top_idxs = torch.topk(probs, k=min(top_k, len(self._classes)))
         top_k_preds = [
-            {"class": self._classes[i], "probability": round(float(v), 4)}
+            {
+                "class": self._classes[i],
+                "probability": round(float(v), 4),
+                "confidence": round(float(v), 4),
+            }
             for v, i in zip(top_vals.tolist(), top_idxs.tolist())
         ]
 

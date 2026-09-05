@@ -478,10 +478,19 @@ class OpticalSARFusionEngine:
 
         latency = round((time.perf_counter() - t0) * 1000, 2)
 
+        normalized_preds = []
+        for p in fusion_res.top_k_predictions:
+            val = float(p.get("confidence", p.get("probability", 0.0)))
+            normalized_preds.append({
+                "class": p.get("class", "Unknown"),
+                "confidence": val,
+                "probability": val,
+            })
+
         return {
             "output": fusion_res.insight,
             "top_class": fusion_res.top_class,
-            "top_k_predictions": fusion_res.top_k_predictions,
+            "top_k_predictions": normalized_preds,
             "confidence": round(fusion_res.confidence, 3),
             "model_name": "RemoteCLIP-ViT-B/32+FusionAdapter",
             "task_type": "OPTICAL_SAR_CROSS_MODAL",

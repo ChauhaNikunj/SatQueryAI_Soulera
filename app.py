@@ -2018,7 +2018,7 @@ elif st.session_state.page in PAGES[1:5]:
                     <div style="background:#141414; border:1px solid #232323; border-radius:10px; padding:12px 14px; margin-bottom:14px;">
                         <div class="mono-label" style="color:#facc15; margin-bottom:6px;">TOP PREDICTED LAND COVER: <b>{top_cls.upper()}</b></div>
                         <div style="color:#8b93a3; font-size:12px; font-family:'IBM Plex Mono',monospace;">
-                            {' · '.join(f"{item['class']}: {int(item['confidence']*100)}%" for item in top_k[:3]) if top_k else ''}
+                            {' · '.join(f"{item.get('class', 'Class')}: {int(float(item.get('confidence', item.get('probability', 0.0)))*100)}%" for item in top_k[:3]) if top_k else ''}
                         </div>
                     </div>
                     """)
