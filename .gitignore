@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-@"
-__pycache__/
-SatQueryAI-Soulera/
-*.pyc
-*.bin
-*.pt
-*.pth
-*.ckpt
-*.safetensors
-*.onnx
-"@ | Set-Content .gitignore
-=======
 # Python
 __pycache__/
 *.py[cod]
@@ -42,19 +29,26 @@ label2/
 
 # Checkpoints / Heavy model weights (>100MB exceeds GitHub limit)
 checkpoints/
+model/
+qwen2_5_vl_vrsbench_lora/
 **/weights/RemoteCLIP-ViT-B-32.pt
 *.pth
 *.bin
 *.onnx
 *.gguf
+*.safetensors
 
 # Allow satquery_backend lightweight trained adapters
 !satquery_backend/weights/*.pt
 !satquery_backend/weights/.gitkeep
 
 # Temporary, Scratch & Runtime Logs
+assets/
 scratch/
+temp_uploads/
+cache_uploads/
+dashboard_results/
 .system_generated/
 *.log
 **/logs/execution_trace.jsonl
->>>>>>> b6637eac818ba94f758b43b5c2f6c68db712ede1
+

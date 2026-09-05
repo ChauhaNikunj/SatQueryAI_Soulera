@@ -144,6 +144,14 @@ class SatQueryPipeline:
         )
         self.logger.log(trace)
 
+        # Also write to root execution_trace.jsonl per Blueprint Section 5
+        try:
+            root_trace_file = _ROOT / "execution_trace.jsonl"
+            with open(root_trace_file, "a", encoding="utf-8") as rf:
+                rf.write(json.dumps(dict(trace), ensure_ascii=False) + "\n")
+        except Exception as log_err:
+            logger.warning("Could not append to root trace file: %s", log_err)
+
         return {
             "trace_id": trace["trace_id"],
             "task_type": task_type.value,
@@ -159,29 +167,34 @@ class SatQueryPipeline:
         }
 
     # ─────────────────────────────────────────────────────────────────────────
-    # Default handlers (can be overridden by teammates)
+    # Integrated model handlers for Tasks 1, 2, 3, 4, 5
     # ─────────────────────────────────────────────────────────────────────────
 
     def _default_vqa_handler(self, img_path: str, query: str) -> tuple[str, float, dict]:
-        """Auto-wires into module1_vqa if available, otherwise provides graceful response."""
-        try:
-            # Attempt to call module1_vqa if Qwen weights are loaded
-            from module1_vqa.run_vqa import run_vqa, load_model, geotiff_to_pil
-            return f"VQA analysis complete on {Path(img_path).name}: {query}", 0.88, {}
-        except Exception:
-            # Fallback using RemoteCLIP zero-shot
-            opt_img, _ = load_image(img_path)
-            res = self.fusion_model.analyze(opt_img, opt_img, prompt=query)
-            return f"VQA Observation: {res.insight}", res.confidence, {"top_class": res.top_class}
+        """Runs Qwen2.5-VL-3B-Instruct (4-bit) for zero-shot VQA & captioning."""
+        from satquery_backend.models.unified_inference import qwen_engine
+        is_caption = any(k in query.lower() for k in ["caption", "describe", "overview", "summar"])
+        mode = "caption" if is_caption else "vqa"
+        res = qwen_engine.predict(img_path, query=query, task_mode=mode)
+        return res["output"], res["confidence"], {
+            "model_name": res["model_name"],
+            "parameters": res.get("parameters", {}),
+        }
 
     def _default_change_handler(self, img1: str, img2: str, query: str) -> tuple[str, float, dict]:
-        """Default Siamese change detection handler."""
-        return (
-            f"Bi-temporal change detection between {Path(img1).name} (T1) and {Path(img2).name} (T2): "
-            f"No significant unauthorized land cover transition detected. Query: '{query}'",
-            0.85,
-            {"change_detected": False, "change_pct": 0.0}
-        )
+        """Runs trained Siamese ResNet18 on bi-temporal satellite image pair."""
+        from satquery_backend.models.unified_inference import siamese_engine
+        res = siamese_engine.predict(img1, img2, query=query)
+        return res["output"], res["confidence"], {
+            "model_name": res["model_name"],
+            "change_description": res.get("change_description"),
+            "vqa_answer": res.get("vqa_answer"),
+            "change_detected": res.get("change_detected", False),
+            "change_pct": res.get("change_pct", 0.0),
+            "visual_evidence_path": res.get("visual_evidence_path"),
+            "change_mask_path": res.get("change_mask_path"),
+            "parameters": res.get("parameters", {}),
+        }
 
 
 # Global singleton instance for easy import

@@ -136,13 +136,51 @@ def load_geotiff(path: str) -> Tuple[np.ndarray, Dict[str, Any]]:
     IOError / ImportError
         If no suitable raster library is available or the file is corrupt.
     """
+def _load_with_pil_or_cv2(path: str) -> Tuple[np.ndarray, Dict[str, Any]]:
+    """Fallback GeoTIFF/TIFF reader using PIL or OpenCV."""
+    try:
+        pil_img = Image.open(path)
+        arr = np.array(pil_img).astype(np.float32)
+        if arr.ndim == 2:
+            arr = arr[np.newaxis, ...]
+        elif arr.ndim == 3:
+            arr = arr.transpose(2, 0, 1)
+        meta = {
+            "crs": None, "transform": None, "width": arr.shape[2], "height": arr.shape[1],
+            "count": arr.shape[0], "dtype": str(arr.dtype), "driver": "PIL", "nodata": None, "filepath": str(path)
+        }
+        return arr, meta
+    except Exception:
+        import cv2
+        mat = cv2.imread(path, cv2.IMREAD_UNCHANGED)
+        if mat is None:
+            raise IOError(f"Failed to read raster at {path}")
+        arr = mat.astype(np.float32)
+        if arr.ndim == 2:
+            arr = arr[np.newaxis, ...]
+        elif arr.ndim == 3:
+            arr = arr.transpose(2, 0, 1)
+        meta = {
+            "crs": None, "transform": None, "width": arr.shape[2], "height": arr.shape[1],
+            "count": arr.shape[0], "dtype": str(arr.dtype), "driver": "OpenCV", "nodata": None, "filepath": str(path)
+        }
+        return arr, meta
+
+
+def load_geotiff(path: str) -> Tuple[np.ndarray, Dict[str, Any]]:
+    """
+    Load a GeoTIFF file as a float32 NumPy array (bands, H, W).
+    """
     if not os.path.isfile(path):
         raise FileNotFoundError(f"GeoTIFF not found: {path}")
     try:
         return _load_with_rasterio(path)
     except ImportError:
-        logger.warning("rasterio unavailable; trying GDAL for %s", path)
-        return _load_with_gdal(path)
+        try:
+            return _load_with_gdal(path)
+        except (ImportError, Exception):
+            logger.info("rasterio/GDAL unavailable; using PIL/OpenCV fallback for %s", path)
+            return _load_with_pil_or_cv2(path)
 
 
 def load_image(path: str) -> Tuple[Image.Image, Dict[str, Any]]:

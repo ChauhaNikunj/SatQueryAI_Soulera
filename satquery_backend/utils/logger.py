@@ -189,6 +189,17 @@ def log_execution(
         "schema_version": SCHEMA_VERSION,
     }
     Path(log_path).parent.mkdir(parents=True, exist_ok=True)
+    line = json.dumps(trace, ensure_ascii=False) + "\n"
     with open(log_path, "a", encoding="utf-8") as f:
-        f.write(json.dumps(trace) + "\n")
+        f.write(line)
+
+    # Also append to root execution_trace.jsonl if log_path is subfolder
+    try:
+        root_trace = Path("execution_trace.jsonl").resolve()
+        if root_trace != Path(log_path).resolve():
+            with open(root_trace, "a", encoding="utf-8") as rf:
+                rf.write(line)
+    except Exception:
+        pass
+
     return trace

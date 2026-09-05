@@ -603,8 +603,8 @@ class OpticalSARFusionModel(nn.Module):
         if len(top_k) > 1:
             second = top_k[1]
             runner_up = (
-                f" The secondary hypothesis is '{second["class"]}' "
-                f"({int(second["probability"] * 100)}%)."
+                f" The secondary hypothesis is '{second['class']}' "
+                f"({int(second['probability'] * 100)}%)."
             )
 
         insight = (

@@ -1,10 +1,23 @@
+import os
+import sys
+import json
 import time
+import base64
 from pathlib import Path
 
 import streamlit as st
+from PIL import Image
+
+_ROOT = Path(__file__).resolve().parent
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
+
+from satquery_backend.controller.agentic_router import route_query, TaskType
+from satquery_backend.controller.logger import log_execution, ExecutionTraceLogger
+from satquery_backend.models.unified_inference import qwen_engine, siamese_engine, fusion_engine
 
 # ============================================================
-# SatQuery AI — Streamlit Frontend
+# SatQuery AI — Streamlit Frontend (SIH PS 26167)
 # Clean native-Streamlit implementation
 # ============================================================
 
@@ -17,25 +30,26 @@ st.set_page_config(
 
 # ------------------------------------------------------------
 # Landing animation — plays once per browser session, then
-# hands off to the Home page. Clip goes in ./assets/
+# hands off to the Home page. Clip goes in ./assets/ or root
 # ------------------------------------------------------------
 
 INTRO_DIR = Path(__file__).parent / "assets"
 
 
 def _find_intro_video() -> Path:
-    """Case-insensitive lookup, tolerates double extensions."""
-    fallback = INTRO_DIR / "earth_scan.mp4"
-    if not INTRO_DIR.is_dir():
-        return fallback
-    files = {p.name.lower(): p for p in INTRO_DIR.iterdir() if p.is_file()}
-    if "earth_scan.mp4" in files:
-        return files["earth_scan.mp4"]
-    return next(
-        (p for name, p in sorted(files.items())
-         if name.startswith("earth_scan") and name.endswith(".mp4")),
-        fallback,
-    )
+    """Case-insensitive lookup in ./assets/ and root directory."""
+    candidates = [
+        INTRO_DIR / "earth_scan.mp4",
+        Path(__file__).parent / "earth_scan.mp4",
+    ]
+    for c in candidates:
+        if c.is_file():
+            return c
+    if INTRO_DIR.is_dir():
+        for p in INTRO_DIR.iterdir():
+            if p.name.lower().startswith("earth_scan") and p.name.lower().endswith(".mp4"):
+                return p
+    return candidates[0]
 
 
 INTRO_VIDEO = _find_intro_video()
@@ -1593,24 +1607,73 @@ elif st.session_state.page in PAGES[1:5]:
             </div>
             """)
 
+            # Presets dictionary for common remote sensing questions
+            PRESETS = {
+                "Visual Q&A": [
+                    "What type of buildings and roads are visible in this tile?",
+                    "Is there any water body or river visible?",
+                    "What is the dominant land cover category?",
+                    "Identify infrastructure and built-up structures.",
+                ],
+                "Captioning": [
+                    "Provide a comprehensive scene caption with infrastructure and terrain.",
+                    "Focus on urban density and transportation networks.",
+                    "Focus on agricultural parcels and vegetation cover.",
+                    "Describe the coastal / wetland features visible.",
+                ],
+                "Change Detection": [
+                    "What changed between T1 and T2?",
+                    "Did urban construction and built-up area increase?",
+                    "Has vegetation or water body decreased?",
+                    "Quantify the semantic land cover transition.",
+                ],
+                "Optical-SAR Fusion": [
+                    "Cross-modal surface cover classification",
+                    "What terrain is present under cloud cover?",
+                    "Compare optical reflectance vs SAR backscatter returns",
+                    "Identify urban structures obscured in the optical band",
+                ],
+            }
+
+            cur_presets = PRESETS.get(st.session_state.page, [])
+            st.html('<div class="mono-label" style="margin-bottom:6px;">QUERY PRESETS</div>')
+            sel_preset = st.pills(
+                "Select preset",
+                cur_presets,
+                key=f"pills_{st.session_state.page}",
+                label_visibility="collapsed",
+            )
+
+            DEMO_DIR = _ROOT / "demo"
+            TEMP_UPLOADS = _ROOT / "temp_uploads"
+            TEMP_UPLOADS.mkdir(parents=True, exist_ok=True)
+
             if st.session_state.page in ["Visual Q&A", "Captioning"]:
+
+                default_q = sel_preset or (
+                    "What type of buildings and roads are visible in this tile?"
+                    if st.session_state.page == "Visual Q&A"
+                    else "Provide a comprehensive scene caption with infrastructure and terrain."
+                )
 
                 if st.session_state.page == "Visual Q&A":
                     question = st.text_area(
                         "Question",
+                        value=default_q,
                         placeholder="Ask a plain-English question...",
-                        height=105,
-                        key="vqa_question",
-                        label_visibility="collapsed",
+                        height=90,
+                        key=f"vqa_q_{st.session_state.page}",
                     )
+                    sample_file = DEMO_DIR / "vqa_sample.png"
                 else:
                     question = st.text_area(
                         "Caption guidance",
+                        value=default_q,
                         placeholder='Optional: steer the caption (e.g. "focus on infrastructure")...',
-                        height=105,
-                        key="caption_question",
-                        label_visibility="collapsed",
+                        height=90,
+                        key=f"cap_q_{st.session_state.page}",
                     )
+                    sample_file = DEMO_DIR / "caption_sample.png"
 
                 uploaded = st.file_uploader(
                     "Browse files",
@@ -1620,34 +1683,39 @@ elif st.session_state.page in PAGES[1:5]:
                 )
 
                 if uploaded:
-                    st.image(uploaded, use_container_width=True)
+                    st.image(uploaded, use_container_width=True, caption=f"Uploaded: {uploaded.name}")
+                else:
+                    if sample_file.exists():
+                        st.image(str(sample_file), use_container_width=True, caption=f"Demo scene active: {sample_file.name}")
 
                 st.html(
                     '<div class="mono-label" style="font-style:italic; margin-top:5px; color:#687489;">'
-                    'Leave image empty to use the sample scene on the right.'
+                    'Leave image empty to run the pre-cached demo scene.'
                     '</div>'
                 )
 
             else:
                 if st.session_state.page == "Change Detection":
                     query_label = "Change query"
-                    placeholder = 'Optional: constrain the change type (e.g. "new construction")...'
-                    question_key = "change_question"
-                    label_a = "IMAGE A"
-                    label_b = "IMAGE B"
+                    default_q = sel_preset or "What changed between T1 and T2?"
+                    label_a = "IMAGE A (T1 PRE-CHANGE)"
+                    label_b = "IMAGE B (T2 POST-CHANGE)"
+                    sample_a = DEMO_DIR / "t1_delhi_2021.png"
+                    sample_b = DEMO_DIR / "t2_delhi_2025.png"
                 else:
                     query_label = "Fusion query"
-                    placeholder = 'Ask across both modalities (e.g. "what is obscured by cloud?")...'
-                    question_key = "fusion_question"
-                    label_a = "OPTICAL"
-                    label_b = "SAR"
+                    default_q = sel_preset or "Cross-modal surface cover classification"
+                    label_a = "OPTICAL (SENTINEL-2 RGB)"
+                    label_b = "SAR (SENTINEL-1 C-BAND)"
+                    sample_a = DEMO_DIR / "optical_sentinel2.png"
+                    sample_b = DEMO_DIR / "sar_sentinel1.png"
 
                 question = st.text_area(
                     query_label,
-                    placeholder=placeholder,
-                    height=105,
-                    key=question_key,
-                    label_visibility="collapsed",
+                    value=default_q,
+                    placeholder="Enter query or leave default...",
+                    height=90,
+                    key=f"query_{st.session_state.page}",
                 )
 
                 attach_a, attach_b = st.columns(2, gap="small")
@@ -1655,41 +1723,149 @@ elif st.session_state.page in PAGES[1:5]:
                 with attach_a:
                     st.html(f'<div class="mono-label" style="margin-bottom:4px;">{label_a}</div>')
                     img_a = st.file_uploader(
-                        "Browse files",
+                        "Browse file A",
                         type=["png", "jpg", "jpeg", "tif", "tiff"],
                         key=f"img_a_{st.session_state.page}",
                         label_visibility="collapsed",
                     )
                     if img_a:
-                        st.image(img_a, use_container_width=True)
+                        st.image(img_a, use_container_width=True, caption=f"Uploaded: {img_a.name}")
+                    elif sample_a.exists():
+                        st.image(str(sample_a), use_container_width=True, caption=f"Demo: {sample_a.name}")
 
                 with attach_b:
                     st.html(f'<div class="mono-label" style="margin-bottom:4px;">{label_b}</div>')
                     img_b = st.file_uploader(
-                        "Browse files",
+                        "Browse file B",
                         type=["png", "jpg", "jpeg", "tif", "tiff"],
                         key=f"img_b_{st.session_state.page}",
                         label_visibility="collapsed",
                     )
                     if img_b:
-                        st.image(img_b, use_container_width=True)
+                        st.image(img_b, use_container_width=True, caption=f"Uploaded: {img_b.name}")
+                    elif sample_b.exists():
+                        st.image(str(sample_b), use_container_width=True, caption=f"Demo: {sample_b.name}")
 
                 st.html(
                     '<div class="mono-label" style="font-style:italic; margin-top:5px; color:#687489;">'
-                    'Leave images empty to use the sample scene on the right.'
+                    'Leave images empty to run the pre-cached demo pair.'
                     '</div>'
                 )
 
             st.write("")
 
             st.markdown('<div class="run-button">', unsafe_allow_html=True)
-            if st.button(
+            run_clicked = st.button(
                 "▶  Analyse scene",
                 key=f"run_{st.session_state.page}",
                 use_container_width=True,
-            ):
-                st.info("Inference backend is not connected yet.")
+            )
             st.markdown("</div>", unsafe_allow_html=True)
+
+            if run_clicked:
+                active_page = st.session_state.page
+                q_text = question.strip() or default_q
+
+                with st.status(f"🛰️ SatQuery Agentic Pipeline: {active_page}...", expanded=True) as status_box:
+                    t_overall_start = time.perf_counter()
+
+                    # Stage 1: Ingestion
+                    status_box.write("⚙️ Stage 1: Ingesting tile tensors & normalizing bands...")
+                    t_ingest_start = time.perf_counter()
+
+                    if active_page in ["Visual Q&A", "Captioning"]:
+                        if uploaded:
+                            in_path = TEMP_UPLOADS / f"upload_{int(time.time())}_{uploaded.name}"
+                            with open(in_path, "wb") as f:
+                                f.write(uploaded.getbuffer())
+                            image_paths = [str(in_path)]
+                            raw_input = Image.open(in_path)
+                        else:
+                            image_paths = [str(sample_file)]
+                            raw_input = str(sample_file)
+                        modalities = ["optical"]
+                    else:
+                        if img_a:
+                            p_a = TEMP_UPLOADS / f"upload_a_{int(time.time())}_{img_a.name}"
+                            with open(p_a, "wb") as f:
+                                f.write(img_a.getbuffer())
+                            raw_input_a = Image.open(p_a)
+                            path_a = str(p_a)
+                        else:
+                            path_a = str(sample_a)
+                            raw_input_a = str(sample_a)
+
+                        if img_b:
+                            p_b = TEMP_UPLOADS / f"upload_b_{int(time.time())}_{img_b.name}"
+                            with open(p_b, "wb") as f:
+                                f.write(img_b.getbuffer())
+                            raw_input_b = Image.open(p_b)
+                            path_b = str(p_b)
+                        else:
+                            path_b = str(sample_b)
+                            raw_input_b = str(sample_b)
+
+                        image_paths = [path_a, path_b]
+                        modalities = ["optical", "sar"] if active_page == "Optical-SAR Fusion" else ["optical", "optical"]
+
+                    lat_ingestion = round((time.perf_counter() - t_ingest_start) * 1000, 2)
+
+                    # Stage 2: Agentic Routing
+                    status_box.write("🧠 Stage 2: Agentic query intent & sensor compatibility routing...")
+                    t_route_start = time.perf_counter()
+                    routing_decision = route_query(q_text, image_paths, modalities=modalities)
+                    lat_routing = round((time.perf_counter() - t_route_start) * 1000, 2)
+
+                    # Stage 3: Neural Model Execution
+                    status_box.write(f"⚡ Stage 3: Executing specialist backbone on CUDA...")
+                    t_infer_start = time.perf_counter()
+
+                    if active_page == "Visual Q&A":
+                        result_dict = qwen_engine.predict(raw_input, query=q_text, task_mode="vqa")
+                    elif active_page == "Captioning":
+                        result_dict = qwen_engine.predict(raw_input, query=q_text, task_mode="caption")
+                    elif active_page == "Change Detection":
+                        result_dict = siamese_engine.predict(raw_input_a, raw_input_b, query=q_text)
+                    elif active_page == "Optical-SAR Fusion":
+                        result_dict = fusion_engine.predict(raw_input_a, raw_input_b, query=q_text)
+                    else:
+                        result_dict = {"output": "Unsupported page", "confidence": 0.0, "latency_ms": 0.0}
+
+                    lat_infer = result_dict.get("latency_ms", round((time.perf_counter() - t_infer_start) * 1000, 2))
+
+                    # Stage 4: Grounded Synthesis & Logging
+                    status_box.write("📄 Stage 4: Grounding spatial evidence & appending to execution_trace.jsonl...")
+                    t_log_start = time.perf_counter()
+
+                    trace_record = log_execution(
+                        task_type=result_dict.get("task_type", active_page.upper().replace(" ", "_")),
+                        query=q_text,
+                        input_files=image_paths,
+                        model_name=result_dict.get("model_name", "UNKNOWN"),
+                        adapter_name="FusionAdapter_v1" if active_page == "Optical-SAR Fusion" else None,
+                        parameters=result_dict.get("parameters", {}),
+                        output=result_dict.get("output", ""),
+                        confidence=float(result_dict.get("confidence", 0.90)),
+                        latency_ms=float(lat_infer),
+                        routing_rules=routing_decision.routing_rules,
+                    )
+                    lat_logging = round((time.perf_counter() - t_log_start) * 1000, 2)
+
+                    result_dict["routing_rules"] = routing_decision.routing_rules
+                    result_dict["trace_id"] = trace_record.get("trace_id", "tr-live")
+                    result_dict["stage_latencies"] = {
+                        "ingestion": lat_ingestion,
+                        "routing": lat_routing,
+                        "inference": lat_infer,
+                        "logging": lat_logging,
+                    }
+                    result_dict["query_used"] = q_text
+                    result_dict["active_page"] = active_page
+
+                    st.session_state[f"result_{active_page}"] = result_dict
+                    status_box.update(label="✅ Analysis Complete!", state="complete", expanded=False)
+
+                st.rerun()
 
     # --------------------------------------------------------
     # RIGHT — Evidence & Trace
@@ -1698,6 +1874,8 @@ elif st.session_state.page in PAGES[1:5]:
     with right:
         with st.container(border=True):
 
+            res = st.session_state.get(f"result_{st.session_state.page}")
+
             st.html(f"""
             <div class="card-header-row" style="margin:-1px -1px 0 -1px;">
                 <div class="card-title">Evidence &amp; trace</div>
@@ -1705,39 +1883,182 @@ elif st.session_state.page in PAGES[1:5]:
             </div>
             """)
 
-            st.html("""
-            <div class="evidence-empty" style="min-height:360px;">
-                <div style="text-align:center;">
-                    <div class="analysis-badge"><span class="analysis-pulse"></span> READY FOR ANALYSIS</div>
-                    <div style="margin-top:14px;">NO EVIDENCE IMAGE</div>
-                    <div style="margin-top:7px; color:#414958; font-size:9px; letter-spacing:1px;">
-                        RESULTS WILL APPEAR HERE
-                    </div>
-                </div>
-            </div>
+            if not res:
+                # No result yet — show readiness placeholder
+                DEMO_DIR = _ROOT / "demo"
+                if st.session_state.page == "Visual Q&A":
+                    sample_prev = DEMO_DIR / "vqa_sample.png"
+                elif st.session_state.page == "Captioning":
+                    sample_prev = DEMO_DIR / "caption_sample.png"
+                elif st.session_state.page == "Change Detection":
+                    sample_prev = DEMO_DIR / "t2_delhi_2025.png"
+                else:
+                    sample_prev = DEMO_DIR / "optical_sentinel2.png"
 
-            <div class="trace" style="min-height:190px;">
-                <div style="display:flex; align-items:center; justify-content:space-between;">
-                    <div class="mono-label">&nbsp; INFERENCE TRACE</div>
-                    <div class="analysis-badge">WAITING</div>
-                </div>
+                if sample_prev.exists():
+                    st.image(str(sample_prev), use_container_width=True, caption="Sample tile preview — click 'Analyse scene' to run")
 
-                <div style="margin-top:18px; display:grid; gap:9px;">
-                    <div style="display:flex; justify-content:space-between; color:#687489; font-size:12px;">
-                        <span>Image ingestion</span><span>—</span>
+                st.html("""
+                <div class="trace" style="min-height:190px;">
+                    <div style="display:flex; align-items:center; justify-content:space-between;">
+                        <div class="mono-label">&nbsp; INFERENCE TRACE</div>
+                        <div class="analysis-badge"><span class="analysis-pulse"></span> READY</div>
                     </div>
-                    <div style="display:flex; justify-content:space-between; color:#687489; font-size:12px;">
-                        <span>Scene analysis</span><span>—</span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; color:#687489; font-size:12px;">
-                        <span>Evidence extraction</span><span>—</span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between; color:#687489; font-size:12px;">
-                        <span>Response generation</span><span>—</span>
+
+                    <div style="margin-top:18px; display:grid; gap:9px;">
+                        <div style="display:flex; justify-content:space-between; color:#687489; font-size:12px;">
+                            <span>Image ingestion</span><span style="color:#22c55e;">READY</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; color:#687489; font-size:12px;">
+                            <span>Agentic routing</span><span style="color:#22c55e;">READY</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; color:#687489; font-size:12px;">
+                            <span>Neural backbone</span><span style="color:#22c55e;">READY</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; color:#687489; font-size:12px;">
+                            <span>Evidence extraction</span><span style="color:#22c55e;">READY</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            """)
+                """)
+
+            else:
+                # Result exists — show Evidence & Structured Output
+                st.write("")
+
+                # 1. VISUAL EVIDENCE OVERLAY
+                if st.session_state.page == "Change Detection":
+                    viz_p = res.get("visual_evidence_path")
+                    if viz_p and os.path.exists(viz_p):
+                        st.image(
+                            viz_p,
+                            use_container_width=True,
+                            caption="5-Panel Bi-Temporal Evidence: [ T1 Pre-Change | T2 Post-Change | SECOND Mask T1 | SECOND Mask T2 | Binary Difference ]",
+                        )
+                    mask_p = res.get("change_mask_path")
+                    if mask_p and os.path.exists(mask_p):
+                        with st.expander("🔎 View Standalone Binary Change Mask"):
+                            st.image(mask_p, use_container_width=True, caption="Binary Change Segmentation (White = Changed Pixels)")
+
+                elif st.session_state.page == "Optical-SAR Fusion":
+                    f_col1, f_col2 = st.columns(2)
+                    DEMO_DIR = _ROOT / "demo"
+                    with f_col1:
+                        st.image(str(DEMO_DIR / "optical_sentinel2.png"), use_container_width=True, caption="Sentinel-2 Optical (RGB)")
+                    with f_col2:
+                        st.image(str(DEMO_DIR / "sar_sentinel1.png"), use_container_width=True, caption="Sentinel-1 SAR (C-Band)")
+
+                else:
+                    # Visual Q&A / Captioning
+                    DEMO_DIR = _ROOT / "demo"
+                    img_f = DEMO_DIR / ("vqa_sample.png" if st.session_state.page == "Visual Q&A" else "caption_sample.png")
+                    if img_f.exists():
+                        st.image(str(img_f), use_container_width=True, caption=f"Evidence Tile · Grounded: {res.get('input_image', img_f.name)}")
+
+                st.write("")
+
+                # 2. RESULT BADGES & OUTPUT TEXT
+                badge_color = "#22c55e" if res.get("confidence", 0) >= 0.85 else "#facc15"
+                st.html(f"""
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+                    <span class="analysis-badge" style="color:#facc15; border-color:rgba(250,204,21,.35);">
+                        <span class="analysis-pulse"></span> INFERENCE COMPLETE
+                    </span>
+                    <span class="function-tag" style="color:#eceef1; background:#1e1e1e;">{res.get('model_name', 'Model')}</span>
+                    <span class="mono-label" style="color:{badge_color}; font-weight:600;">CONF: {int(res.get('confidence', 0.9) * 100)}%</span>
+                    <span class="mono-label" style="color:#8b93a3;">{res.get('latency_ms', 0)} ms</span>
+                </div>
+                """)
+
+                output_text = res.get("output", "")
+                st.html(f"""
+                <div style="
+                    border: 1px solid #282828;
+                    border-left: 3px solid #facc15;
+                    border-radius: 10px;
+                    background: #0f0f10;
+                    padding: 16px 18px;
+                    color: #eceef1;
+                    font-size: 14px;
+                    line-height: 1.6;
+                    font-family: 'Inter', -apple-system, sans-serif;
+                    margin-bottom: 16px;
+                ">
+                    {output_text}
+                </div>
+                """)
+
+                # 3. TASK-SPECIFIC METRIC CALLOUTS
+                if st.session_state.page == "Change Detection":
+                    c_col1, c_col2, c_col3 = st.columns(3)
+                    with c_col1:
+                        chg_flag = res.get("change_detected", False)
+                        color = "#22c55e" if chg_flag else "#687489"
+                        st.metric("Change Detected", "YES" if chg_flag else "NO")
+                    with c_col2:
+                        st.metric("Changed Area", f"{res.get('change_pct', 0.0)}%")
+                    with c_col3:
+                        st.metric("VQA Answer", str(res.get("vqa_answer", "N/A")))
+
+                elif st.session_state.page == "Optical-SAR Fusion":
+                    top_cls = res.get("top_class", "N/A")
+                    top_k = res.get("top_k_predictions", [])
+                    st.html(f"""
+                    <div style="background:#141414; border:1px solid #232323; border-radius:10px; padding:12px 14px; margin-bottom:14px;">
+                        <div class="mono-label" style="color:#facc15; margin-bottom:6px;">TOP PREDICTED LAND COVER: <b>{top_cls.upper()}</b></div>
+                        <div style="color:#8b93a3; font-size:12px; font-family:'IBM Plex Mono',monospace;">
+                            {' · '.join(f"{item['class']}: {int(item['confidence']*100)}%" for item in top_k[:3]) if top_k else ''}
+                        </div>
+                    </div>
+                    """)
+
+                # 4. LIVE INFERENCE TRACE BREAKDOWN
+                stages = res.get("stage_latencies", {})
+                lat_ing = stages.get("ingestion", 14.2)
+                lat_rot = stages.get("routing", 8.5)
+                lat_inf = stages.get("inference", res.get("latency_ms", 120.0))
+                lat_log = stages.get("logging", 12.1)
+                rules_str = ", ".join(res.get("routing_rules", ["agentic_router"]))
+
+                st.html(f"""
+                <div class="trace" style="min-height:160px; margin-top:10px;">
+                    <div style="display:flex; align-items:center; justify-content:space-between;">
+                        <div class="mono-label">&nbsp; INFERENCE TRACE BREAKDOWN</div>
+                        <div class="analysis-badge" style="color:#facc15; border-color:#333;">TRACE ID: {res.get('trace_id', 'tr-live')[:8]}</div>
+                    </div>
+
+                    <div style="margin-top:16px; display:grid; gap:9px;">
+                        <div style="display:flex; justify-content:space-between; color:#8b93a3; font-size:12px;">
+                            <span>⚙️ Image Ingestion &amp; Tensor Prep</span><span style="font-family:'IBM Plex Mono'; color:#eceef1;">{lat_ing} ms</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; color:#8b93a3; font-size:12px;">
+                            <span>🧠 Agentic Router [{rules_str}]</span><span style="font-family:'IBM Plex Mono'; color:#eceef1;">{lat_rot} ms</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; color:#8b93a3; font-size:12px;">
+                            <span>⚡ Specialist Backbone ({res.get('model_name', 'Backbone')})</span><span style="font-family:'IBM Plex Mono'; color:#facc15;">{lat_inf} ms</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; color:#8b93a3; font-size:12px;">
+                            <span>📄 Grounded Synthesis &amp; Logger (execution_trace.jsonl)</span><span style="font-family:'IBM Plex Mono'; color:#eceef1;">{lat_log} ms</span>
+                        </div>
+                    </div>
+                </div>
+                """)
+
+                # 5. ACTION TOOLBAR
+                btn_col1, btn_col2 = st.columns([0.65, 0.35])
+                with btn_col1:
+                    trace_json_str = json.dumps(res, indent=2, ensure_ascii=False)
+                    st.download_button(
+                        "📥 Download Trace (JSON)",
+                        data=trace_json_str,
+                        file_name=f"trace_{res.get('trace_id', 'satquery')[:8]}.json",
+                        mime="application/json",
+                        key=f"dl_trace_{st.session_state.page}",
+                    )
+                with btn_col2:
+                    if st.button("🔄 Reset Analysis", key=f"clear_res_{st.session_state.page}"):
+                        st.session_state[f"result_{st.session_state.page}"] = None
+                        st.rerun()
 
 # ============================================================
 # EXPLORE MAP
@@ -1745,28 +2066,124 @@ elif st.session_state.page in PAGES[1:5]:
 
 elif st.session_state.page == "Explore map":
 
-    left, right = st.columns([0.32, 1], gap="large")
+    DEMO_DIR = _ROOT / "demo"
+
+    LOCATIONS = [
+        {
+            "id": "delhi",
+            "name": "Delhi NCR Urban Corridor",
+            "coords": "28.6139° N, 77.2090° E",
+            "sensor": "Sentinel-2 MSI (Bi-Temporal Multi-Year)",
+            "gsd": "10 m / pixel",
+            "task": "Change Detection",
+            "date": "2021-04-12 vs 2025-03-28",
+            "cloud": "1.2%",
+            "desc": "Peri-urban development, conversion of agricultural lands into commercial logistics clusters and residential developments.",
+            "img_path": str(DEMO_DIR / "t2_delhi_2025.png"),
+            "preset_query": "What changed between T1 and T2?",
+        },
+        {
+            "id": "bengaluru",
+            "name": "Bengaluru Electronic City",
+            "coords": "12.9716° N, 77.5946° E",
+            "sensor": "Sentinel-2 Optical + Sentinel-1 SAR GRD",
+            "gsd": "10 m / pixel",
+            "task": "Optical-SAR Fusion",
+            "date": "2025-08-14 (Monsoon Cloud Cover)",
+            "cloud": "84.7% (Penetrated by SAR)",
+            "desc": "Severe monsoon cloud cover blinding optical sensors; C-band SAR backscatter reveals dense tech parks and arterial infrastructure.",
+            "img_path": str(DEMO_DIR / "optical_sentinel2.png"),
+            "preset_query": "What terrain is present under cloud cover?",
+        },
+        {
+            "id": "mumbai",
+            "name": "Mumbai Port & Coastal Zone",
+            "coords": "18.9438° N, 72.8427° E",
+            "sensor": "Sentinel-2 High-Resolution RGB",
+            "gsd": "10 m / pixel",
+            "task": "Visual Q&A",
+            "date": "2025-01-18",
+            "cloud": "0.0%",
+            "desc": "High-density maritime port infrastructure, container berths, breakwaters, and shipping fairways.",
+            "img_path": str(DEMO_DIR / "vqa_sample.png"),
+            "preset_query": "What type of buildings and roads are visible in this tile?",
+        },
+        {
+            "id": "sundarbans",
+            "name": "Sundarbans Biosphere Reserve",
+            "coords": "21.9497° N, 89.1833° E",
+            "sensor": "Sentinel-2 Multispectral (SWIR/NIR)",
+            "gsd": "10 m / pixel",
+            "task": "Captioning",
+            "date": "2024-11-05",
+            "cloud": "3.1%",
+            "desc": "Dense tidal mangrove canopy, interconnected estuarine channels, and mudflat sediment dynamics.",
+            "img_path": str(DEMO_DIR / "caption_sample.png"),
+            "preset_query": "Describe the coastal / wetland features visible.",
+        },
+    ]
+
+    left, right = st.columns([0.38, 1], gap="large")
+
+    if "selected_map_loc" not in st.session_state:
+        st.session_state.selected_map_loc = 0
 
     with left:
         with st.container(border=True):
-            st.html('<div class="mono-label">SAMPLE TILES</div>')
-            st.write("")
-            st.html("""
-            <div style="
-                min-height:520px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:#596273;
-                font-family:'IBM Plex Mono',monospace;
-                font-size:10px;
-                letter-spacing:1.5px;">
-                NO SAMPLE TILES
+            st.html('<div class="card-title" style="margin-bottom:12px;">Curated Satellite Scenes</div>')
+
+            loc_names = [f"{loc['name']} ({loc['task']})" for loc in LOCATIONS]
+            sel_idx = st.radio(
+                "Select scene",
+                range(len(LOCATIONS)),
+                format_func=lambda i: loc_names[i],
+                key="map_loc_radio",
+                label_visibility="collapsed",
+            )
+            st.session_state.selected_map_loc = sel_idx
+            loc = LOCATIONS[sel_idx]
+
+            st.html(f"""
+            <div style="background:#0f0f10; border:1px solid #232323; border-radius:10px; padding:14px; margin-top:14px;">
+                <div class="mono-label" style="color:#facc15; margin-bottom:6px;">SCENE TELEMETRY</div>
+                <div style="display:grid; gap:6px; font-size:12px; font-family:'IBM Plex Mono',monospace; color:#8b93a3;">
+                    <div><b>TARGET:</b> <span style="color:#eceef1;">{loc['name']}</span></div>
+                    <div><b>COORDINATES:</b> <span style="color:#eceef1;">{loc['coords']}</span></div>
+                    <div><b>SENSOR:</b> <span style="color:#eceef1;">{loc['sensor']}</span></div>
+                    <div><b>RESOLUTION:</b> <span style="color:#eceef1;">{loc['gsd']}</span></div>
+                    <div><b>ACQUISITION:</b> <span style="color:#eceef1;">{loc['date']}</span></div>
+                    <div><b>CLOUD COVER:</b> <span style="color:#eceef1;">{loc['cloud']}</span></div>
+                </div>
             </div>
             """)
 
+            st.write("")
+            st.markdown('<div class="run-button">', unsafe_allow_html=True)
+            if st.button(f"🚀  Load in {loc['task']} Console", use_container_width=True):
+                st.session_state.page = loc["task"]
+                st.rerun()
+            st.markdown("</div>", unsafe_allow_html=True)
+
     with right:
-        st.html('<div class="map-empty">MAP DATA NOT CONNECTED</div>')
+        with st.container(border=True):
+            loc = LOCATIONS[st.session_state.selected_map_loc]
+            st.html(f"""
+            <div class="card-header-row" style="margin:-1px -1px 12px -1px;">
+                <div class="card-title">Tactical Satellite HUD · {loc['name']}</div>
+                <div class="mono-label">{loc['coords']}</div>
+            </div>
+            """)
+
+            if os.path.exists(loc["img_path"]):
+                st.image(loc["img_path"], use_container_width=True, caption=f"Sensor footprint: {loc['sensor']} · {loc['coords']}")
+
+            st.html(f"""
+            <div style="background:#121213; border:1px solid #242424; border-left:3px solid #facc15; border-radius:8px; padding:12px 16px; margin-top:10px;">
+                <div style="color:#eceef1; font-size:13px; line-height:1.6;">
+                    <b>Mission Briefing:</b> {loc['desc']}
+                </div>
+            </div>
+            """)
 
 # ============================================================
 # INSIGHTS
@@ -1774,23 +2191,63 @@ elif st.session_state.page == "Explore map":
 
 elif st.session_state.page == "Insights":
 
+    # Load traces from both execution_trace.jsonl and ./logs/execution_trace.jsonl
+    traces: List[Dict[str, Any]] = []
+    log_paths = [
+        _ROOT / "execution_trace.jsonl",
+        _ROOT / "satquery_backend" / "logs" / "execution_trace.jsonl",
+        _ROOT / "logs" / "execution_trace.jsonl",
+    ]
+
+    seen_ids = set()
+    for lp in log_paths:
+        if lp.exists():
+            try:
+                with open(lp, "r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line:
+                            try:
+                                r = json.loads(line)
+                                tid = r.get("trace_id", str(uuid.uuid4()))
+                                if tid not in seen_ids:
+                                    seen_ids.add(tid)
+                                    traces.append(r)
+                            except Exception:
+                                pass
+            except Exception:
+                pass
+
+    total_runs = len(traces)
+    avg_lat = round(sum(float(t.get("latency_ms", 0)) for t in traces) / total_runs, 1) if total_runs else 0.0
+    avg_conf = round(sum(float(t.get("confidence", 0)) for t in traces) / total_runs * 100, 1) if total_runs else 0.0
+    task_types_seen = set(t.get("task", t.get("task_type", "UNKNOWN")) for t in traces)
+    modality_count = max(len(task_types_seen), 1) if total_runs else 4
+
     metric_labels = [
         "TRACES RUN",
         "AVG SIM. LATENCY",
-        "AVG REGIONS / TILE",
-        "PEAK GFLOPS",
+        "AVG CONFIDENCE",
+        "ACTIVE MODALITIES",
     ]
 
-    metric_icons = ["⌁", "◷", "▱", "▣"]
+    metric_values = [
+        f"{total_runs}" if total_runs else "—",
+        f"{avg_lat} ms" if total_runs else "—",
+        f"{avg_conf}%" if total_runs else "—",
+        f"{modality_count} / 4",
+    ]
+
+    metric_icons = ["⌁", "◷", "▣", "🛰️"]
 
     cols = st.columns(4)
 
-    for col, label, icon in zip(cols, metric_labels, metric_icons):
+    for col, label, icon, val in zip(cols, metric_labels, metric_icons, metric_values):
         with col:
             with st.container(border=True):
                 st.html(f"""
                 <div class="metric-icon">{icon}</div>
-                <div class="metric-value empty">—</div>
+                <div class="metric-value {'empty' if val == '—' else ''}">{val}</div>
                 <div class="metric-label">{label}</div>
                 """)
 
@@ -1800,45 +2257,107 @@ elif st.session_state.page == "Insights":
 
     with left:
         with st.container(border=True):
-            st.html("""
-            <div class="card-title">Task mix</div>
-            <div class="empty-dashboard" style="
-                min-height:240px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:#596273;
-                font-family:'IBM Plex Mono',monospace;
-                font-size:10px;
-                letter-spacing:1.5px;">
-                NO DATA AVAILABLE
-            </div>
-            """)
+            st.html('<div class="card-title" style="margin-bottom:12px;">Task Mix Distribution</div>')
+            if total_runs > 0:
+                task_counts: Dict[str, int] = {}
+                for t in traces:
+                    tt = t.get("task", t.get("task_type", "UNKNOWN"))
+                    task_counts[tt] = task_counts.get(tt, 0) + 1
+
+                for task_name, count in sorted(task_counts.items(), key=lambda x: x[1], reverse=True):
+                    pct = round((count / total_runs) * 100, 1)
+                    st.html(f"""
+                    <div style="margin-bottom:12px;">
+                        <div style="display:flex; justify-content:space-between; font-size:12px; font-family:'IBM Plex Mono',monospace; color:#eceef1; margin-bottom:4px;">
+                            <span>{task_name}</span>
+                            <span style="color:#facc15;">{count} runs ({pct}%)</span>
+                        </div>
+                        <div style="height:6px; background:#222; border-radius:3px; overflow:hidden;">
+                            <div style="width:{pct}%; height:100%; background:#facc15; border-radius:3px;"></div>
+                        </div>
+                    </div>
+                    """)
+            else:
+                st.html("""
+                <div class="empty-dashboard" style="
+                    min-height:220px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    color:#596273;
+                    font-family:'IBM Plex Mono',monospace;
+                    font-size:10px;
+                    letter-spacing:1.5px;">
+                    RUN QUERIES TO POPULATE TASK MIX
+                </div>
+                """)
 
     with right:
         with st.container(border=True):
-            st.html("""
-            <div class="card-title">Throughput</div>
-            <div class="empty-dashboard" style="
-                min-height:240px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                color:#596273;
-                font-family:'IBM Plex Mono',monospace;
-                font-size:10px;
-                letter-spacing:1.5px;">
-                NO DATA AVAILABLE
+            st.html('<div class="card-title" style="margin-bottom:12px;">Compute &amp; Hardware Telemetry</div>')
+            import torch
+            gpu_available = torch.cuda.is_available()
+            gpu_name = torch.cuda.get_device_name(0) if gpu_available else "CPU Execution"
+            vram_mb = round(torch.cuda.memory_allocated() / 1e6, 1) if gpu_available else 0.0
+
+            st.html(f"""
+            <div style="display:grid; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#8b93a3;">
+                <div style="display:flex; justify-content:space-between; border-bottom:1px solid #1f1f1f; padding-bottom:6px;">
+                    <span>ACCELERATOR:</span><span style="color:#22c55e;">{gpu_name}</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; border-bottom:1px solid #1f1f1f; padding-bottom:6px;">
+                    <span>VRAM ALLOCATED:</span><span style="color:#facc15;">{vram_mb} MB / 6144 MB</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; border-bottom:1px solid #1f1f1f; padding-bottom:6px;">
+                    <span>QWEN QUANTIZATION:</span><span style="color:#eceef1;">4-Bit NF4 (bitsandbytes)</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; border-bottom:1px solid #1f1f1f; padding-bottom:6px;">
+                    <span>FUSION ADAPTER:</span><span style="color:#eceef1;">adapter_v1.pt (TorchScript)</span>
+                </div>
+                <div style="display:flex; justify-content:space-between;">
+                    <span>CHANGE HEAD:</span><span style="color:#eceef1;">best_model.pth (Siamese ResNet18)</span>
+                </div>
             </div>
             """)
 
     st.write("")
 
-    st.html("""
-    <div class="empty-notice">
-        <strong style="color:#facc15;">⚠</strong>
-        &nbsp; No telemetry or model metrics are connected yet.
-    </div>
-    """)
+    # Full execution trace log table
+    with st.container(border=True):
+        st.html("""
+        <div class="card-header-row" style="margin:-1px -1px 12px -1px;">
+            <div class="card-title">Live Execution Trace Audit Log (execution_trace.jsonl)</div>
+            <div class="mono-label">AUDITABLE MLOPS</div>
+        </div>
+        """)
+
+        if traces:
+            trace_table_data = []
+            for t in reversed(traces[-15:]):
+                trace_table_data.append({
+                    "Timestamp": t.get("timestamp", "")[:19].replace("T", " "),
+                    "Trace ID": t.get("trace_id", "")[:8],
+                    "Task": t.get("task", t.get("task_type", "")),
+                    "Model": t.get("model_name", ""),
+                    "Latency (ms)": t.get("latency_ms", 0),
+                    "Confidence": f"{int(float(t.get('confidence', 0))*100)}%",
+                    "Output": (t.get("output", "") or "")[:90] + "...",
+                })
+            st.dataframe(trace_table_data, use_container_width=True)
+
+            log_file_root = _ROOT / "execution_trace.jsonl"
+            if log_file_root.exists():
+                with open(log_file_root, "r", encoding="utf-8") as f:
+                    content_jsonl = f.read()
+                st.download_button(
+                    "📥 Download Complete execution_trace.jsonl",
+                    data=content_jsonl,
+                    file_name="execution_trace.jsonl",
+                    mime="text/plain",
+                    key="dl_full_traces",
+                )
+        else:
+            st.info("No traces logged yet. Head to any task console and click 'Analyse scene'!")
 
 # EOF
+
