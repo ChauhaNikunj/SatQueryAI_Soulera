@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import time
+import uuid
 import base64
 from pathlib import Path
 
@@ -1837,18 +1838,28 @@ elif st.session_state.page in PAGES[1:5]:
                     status_box.write("📄 Stage 4: Grounding spatial evidence & appending to execution_trace.jsonl...")
                     t_log_start = time.perf_counter()
 
-                    trace_record = log_execution(
-                        task_type=result_dict.get("task_type", active_page.upper().replace(" ", "_")),
-                        query=q_text,
-                        input_files=image_paths,
-                        model_name=result_dict.get("model_name", "UNKNOWN"),
-                        adapter_name="FusionAdapter_v1" if active_page == "Optical-SAR Fusion" else None,
-                        parameters=result_dict.get("parameters", {}),
-                        output=result_dict.get("output", ""),
-                        confidence=float(result_dict.get("confidence", 0.90)),
-                        latency_ms=float(lat_infer),
-                        routing_rules=routing_decision.routing_rules,
-                    )
+                    models_list = [result_dict.get("model_name", "UNKNOWN")]
+                    if active_page == "Optical-SAR Fusion":
+                        models_list.append("FusionAdapter_v1")
+
+                    params_logged = dict(result_dict.get("parameters", {}))
+                    params_logged["query"] = q_text
+
+                    try:
+                        trace_record = log_execution(
+                            task=result_dict.get("task_type", active_page.upper().replace(" ", "_")),
+                            models_used=models_list,
+                            input_images=image_paths,
+                            parameters=params_logged,
+                            outputs=[result_dict.get("output", "")],
+                            confidence=float(result_dict.get("confidence", 0.90)),
+                        )
+                    except Exception:
+                        trace_record = {
+                            "trace_id": str(uuid.uuid4()),
+                            "task": active_page,
+                        }
+
                     lat_logging = round((time.perf_counter() - t_log_start) * 1000, 2)
 
                     result_dict["routing_rules"] = routing_decision.routing_rules
