@@ -1,0 +1,31 @@
+# ── Datasets & Raw Images (Excluded from Git) ────────────────────────────────
+data/
+bigearth_real/
+datasets/
+sample_data/
+*.tif
+*.tiff
+*.png
+*.jpg
+*.jpeg
+*.zip
+
+# ── Model Weights (Excluded from Git) ────────────────────────────────────────
+weights/*.pt
+weights/*.pth
+weights/*.bin
+weights/*.gguf
+
+# ── Runtime Logs ─────────────────────────────────────────────────────────────
+logs/execution_trace.jsonl
+
+# ── Python Cache & OS Junk ───────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.DS_Store
+Thumbs.db
+.env
+*.env
+.vscode/settings.json

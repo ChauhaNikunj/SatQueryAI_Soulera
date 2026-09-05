@@ -4,24 +4,43 @@ __pycache__/
 *$py.class
 *.so
 .env
+*.env
 venv/
 env/
 .venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+.vscode/settings.json
 
 # Datasets (excluded per user instruction)
 im1/
 im2/
 label1/
 label2/
+**/data/
+**/bigearth_real/
+**/datasets/
+**/sample_data/
+*.tif
+*.tiff
+*.zip
+*.tar.gz
 
-# Checkpoint model weights (>100MB exceeds GitHub limit, total 4.75GB)
+# Checkpoints / Heavy model weights (>100MB exceeds GitHub limit)
 checkpoints/
+**/weights/RemoteCLIP-ViT-B-32.pt
 *.pth
-*.pt
 *.bin
 *.onnx
+*.gguf
 
-# Temporary & Scratch
+# Allow satquery_backend lightweight trained adapters
+!satquery_backend/weights/*.pt
+!satquery_backend/weights/.gitkeep
+
+# Temporary, Scratch & Runtime Logs
 scratch/
 .system_generated/
 *.log
+**/logs/execution_trace.jsonl
