@@ -1,0 +1,43 @@
+================================================================================
+             SATQUERY: COMPREHENSIVE EVALUATION BENCHMARK REPORT                
+================================================================================
+Checkpoint Evaluated : C:/satquery/checkpoints/best_model.pth
+Dataset Benchmark    : CDVQA / SECOND (Val Split)
+Total QA Samples     : 16,441
+
+--------------------------------------------------------------------------------
+TASK 3: BI-TEMPORAL CHANGE DETECTION & SEMANTIC SEGMENTATION
+--------------------------------------------------------------------------------
+  * Strict Change IoU                : 50.31%
+  * Trimap Change IoU (2px boundary) : 54.98%
+  * Pixel Overall Accuracy (OA)      : 83.20%
+  * Change Detection Precision       : 66.90%
+  * Change Detection Recall          : 66.99%
+  * Change Detection F1-Score        : 66.94%
+  * Mean Semantic IoU (mIoU)         : 32.11%
+
+  PER-CLASS METRICS (6 Land-Cover Categories):
+    - non-vegetated ground surface: IoU= 37.5% | F1= 54.5% | Prec= 53.5% | Rec= 55.5%
+    - tree                        : IoU= 14.1% | F1= 24.7% | Prec= 28.4% | Rec= 21.9%
+    - low vegetation              : IoU= 33.6% | F1= 50.3% | Prec= 52.3% | Rec= 48.5%
+    - water                       : IoU= 17.2% | F1= 29.4% | Prec= 44.3% | Rec= 22.0%
+    - buildings                   : IoU= 56.0% | F1= 71.8% | Prec= 69.6% | Rec= 74.0%
+    - playgrounds                 : IoU= 34.3% | F1= 51.1% | Prec= 62.1% | Rec= 43.4%
+
+--------------------------------------------------------------------------------
+TASK 4: CHANGE-BASED VISUAL QUESTION ANSWERING (CHANGE-VQA)
+--------------------------------------------------------------------------------
+  * Overall VQA Top-1 Accuracy       : 70.12%
+  * Overall VQA Adjacent-1 Accuracy  : 75.90%
+  * Hybrid Grounded VQA Accuracy     : 71.73%
+
+  QUESTION-TYPE BREAKDOWN:
+    - change_or_not          ( 5751 Qs): Neural Top-1= 83.6% | Grounded= 83.6% (Gain:  +0.0%)
+    - change_ratio           (  800 Qs): Neural Top-1= 48.6% | Grounded= 57.5% (Gain:  +8.9%)
+    - change_ratio_types     ( 2409 Qs): Neural Top-1= 72.1% | Grounded= 73.6% (Gain:  +1.5%)
+    - change_to_what         ( 1239 Qs): Neural Top-1= 57.9% | Grounded= 63.5% (Gain:  +5.6%)
+    - decrease_or_not        ( 1922 Qs): Neural Top-1= 73.3% | Grounded= 73.3% (Gain:  +0.0%)
+    - increase_or_not        ( 1920 Qs): Neural Top-1= 73.2% | Grounded= 73.2% (Gain:  +0.0%)
+    - largest_change         ( 1200 Qs): Neural Top-1= 55.9% | Grounded= 67.1% (Gain: +11.2%)
+    - smallest_change        ( 1200 Qs): Neural Top-1= 32.9% | Grounded= 29.0% (Gain:  -3.9%)
+================================================================================

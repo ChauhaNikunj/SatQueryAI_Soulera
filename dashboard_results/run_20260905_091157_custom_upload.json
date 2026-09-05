@@ -1,0 +1,32 @@
+{
+  "timestamp": "20260905_091157",
+  "pair": "custom_upload",
+  "change_description": "Between the two images, Non-vegetated ground surface increased by 0.5%; Tree cover decreased by 0.9% (total changed area: 2.8%).",
+  "vqa_results": [
+    {
+      "question": "What is the change percentage of buildings in the second image?",
+      "answer": "0",
+      "confidence": 100.0,
+      "method": "grounded"
+    },
+    {
+      "question": "What is the percentage of changed areas?",
+      "answer": "0_to_10",
+      "confidence": 100.0,
+      "method": "grounded"
+    },
+    {
+      "question": "Did the areas of trees change?",
+      "answer": "yes",
+      "confidence": 98.3722984790802,
+      "method": "neural"
+    },
+    {
+      "question": "What type of change is the largest?",
+      "answer": "NVG_surface",
+      "confidence": 100.0,
+      "method": "grounded"
+    }
+  ],
+  "saved_visualization": "run_20260905_091157_custom_upload.png"
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @"
 __pycache__/
 SatQueryAI-Soulera/
@@ -9,3 +10,51 @@ SatQueryAI-Soulera/
 *.safetensors
 *.onnx
 "@ | Set-Content .gitignore
+=======
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+*.env
+venv/
+env/
+.venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+
+# Datasets (excluded per user instruction)
+im1/
+im2/
+label1/
+label2/
+**/data/
+**/bigearth_real/
+**/datasets/
+**/sample_data/
+*.tif
+*.tiff
+*.zip
+*.tar.gz
+
+# Checkpoints / Heavy model weights (>100MB exceeds GitHub limit)
+checkpoints/
+**/weights/RemoteCLIP-ViT-B-32.pt
+*.pth
+*.bin
+*.onnx
+*.gguf
+
+# Allow satquery_backend lightweight trained adapters
+!satquery_backend/weights/*.pt
+!satquery_backend/weights/.gitkeep
+
+# Temporary, Scratch & Runtime Logs
+scratch/
+.system_generated/
+*.log
+**/logs/execution_trace.jsonl
+>>>>>>> b6637eac818ba94f758b43b5c2f6c68db712ede1

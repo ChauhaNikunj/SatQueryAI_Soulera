@@ -1,0 +1,7 @@
+class_id,class_name,iou,f1,precision,recall
+1,non-vegetated ground surface,37.45%,54.49%,53.50%,55.52%
+2,tree,14.09%,24.70%,28.37%,21.87%
+3,low vegetation,33.64%,50.34%,52.32%,48.51%
+4,water,17.22%,29.38%,44.31%,21.98%
+5,buildings,55.96%,71.76%,69.64%,74.01%
+6,playgrounds,34.32%,51.10%,62.12%,43.40%
