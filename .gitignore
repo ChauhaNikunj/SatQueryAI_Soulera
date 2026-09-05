@@ -1,0 +1,11 @@
+@"
+__pycache__/
+SatQueryAI-Soulera/
+*.pyc
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+"@ | Set-Content .gitignore
