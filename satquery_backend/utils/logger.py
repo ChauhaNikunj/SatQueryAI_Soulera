@@ -166,26 +166,56 @@ class ExecutionTraceLogger:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def log_execution(
-    task: str,
-    models_used: List[str],
-    input_images: List[str],
-    parameters: Dict[str, Any],
-    outputs: List[str],
-    confidence: float,
+    task: Optional[str] = None,
+    models_used: Optional[List[str]] = None,
+    input_images: Optional[List[str]] = None,
+    parameters: Optional[Dict[str, Any]] = None,
+    outputs: Optional[List[str]] = None,
+    confidence: float = 0.0,
     log_path: str = "satquery_backend/logs/execution_trace.jsonl",
+    *,
+    task_type: Optional[str] = None,
+    query: str = "",
+    input_files: Optional[List[str]] = None,
+    model_name: Optional[str] = None,
+    adapter_name: Optional[str] = None,
+    output: Optional[str] = None,
+    latency_ms: float = 0.0,
+    routing_rules: Optional[List[str]] = None,
+    **kwargs,
 ) -> Dict[str, Any]:
     """
     Mandatory execution trace logger per SIH 26167 Blueprint Section 5.
+    Supports both standard Blueprint signature and extended engine keyword arguments.
     """
+    effective_task = task or task_type or "UNKNOWN"
+    effective_models = list(models_used) if models_used else ([model_name] if model_name else ["UNKNOWN"])
+    if adapter_name and adapter_name not in effective_models:
+        effective_models.append(adapter_name)
+    effective_inputs = input_images or input_files or []
+    effective_outputs = outputs or ([output] if output else [])
+    effective_params = dict(parameters or {})
+    if query and "query" not in effective_params:
+        effective_params["query"] = query
+
     trace = {
         "timestamp": datetime.now(tz=timezone.utc).isoformat(),
-        "task": task,
-        "models_used": models_used,
-        "input_images": [os.path.basename(p) for p in input_images],
-        "parameters": parameters,
-        "outputs": outputs,
+        "task": effective_task,
+        "models_used": effective_models,
+        "input_images": [os.path.basename(p) for p in effective_inputs],
+        "parameters": effective_params,
+        "outputs": effective_outputs,
         "confidence": float(confidence),
         "trace_id": str(uuid.uuid4()),
+        "task_type": effective_task,
+        "query": query,
+        "input_files": [os.path.basename(p) for p in effective_inputs],
+        "model_name": effective_models[0] if effective_models else "UNKNOWN",
+        "adapter_name": adapter_name,
+        "routing_rules": routing_rules or [],
+        "output": effective_outputs[0] if effective_outputs else "",
+        "latency_ms": float(latency_ms),
+        "error": kwargs.get("error", None),
         "schema_version": SCHEMA_VERSION,
     }
     Path(log_path).parent.mkdir(parents=True, exist_ok=True)
