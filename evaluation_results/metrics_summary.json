@@ -1,0 +1,111 @@
+{
+  "checkpoint": "C:/satquery/checkpoints/best_model.pth",
+  "split": "Val",
+  "total_samples": 16441,
+  "task_3_change_detection": {
+    "strict_change_iou": 50.31,
+    "trimap_change_iou": 54.98,
+    "pixel_overall_accuracy": 83.2,
+    "change_precision": 66.9,
+    "change_recall": 66.99,
+    "change_f1_score": 66.94,
+    "mean_semantic_iou": 32.11
+  },
+  "task_4_vqa": {
+    "vqa_top1_accuracy": 70.12,
+    "vqa_adj1_accuracy": 75.9,
+    "vqa_grounded_accuracy": 71.73
+  },
+  "per_class_metrics": [
+    {
+      "class_id": 1,
+      "class_name": "non-vegetated ground surface",
+      "iou": 37.4506195805404,
+      "f1": 54.493198590851016,
+      "precision": 53.50265896999553,
+      "recall": 55.521107545769
+    },
+    {
+      "class_id": 2,
+      "class_name": "tree",
+      "iou": 14.090520873885707,
+      "f1": 24.700598678860263,
+      "precision": 28.368672429939252,
+      "recall": 21.872483280752625
+    },
+    {
+      "class_id": 3,
+      "class_name": "low vegetation",
+      "iou": 33.64003410343685,
+      "f1": 50.34424646141165,
+      "precision": 52.31892128798887,
+      "recall": 48.51321079182458
+    },
+    {
+      "class_id": 4,
+      "class_name": "water",
+      "iou": 17.2200121310993,
+      "f1": 29.380669378984695,
+      "precision": 44.31401776064166,
+      "recall": 21.975247042896182
+    },
+    {
+      "class_id": 5,
+      "class_name": "buildings",
+      "iou": 55.95904055870267,
+      "f1": 71.76120129911436,
+      "precision": 69.64105932344677,
+      "recall": 74.01448736587584
+    },
+    {
+      "class_id": 6,
+      "class_name": "playgrounds",
+      "iou": 34.3194336307202,
+      "f1": 51.101218446988234,
+      "precision": 62.118009682925276,
+      "recall": 43.40349529263196
+    }
+  ],
+  "question_type_breakdown": {
+    "change_or_not": {
+      "total": 5751,
+      "neural_top1_acc": 83.55,
+      "grounded_acc": 83.55
+    },
+    "increase_or_not": {
+      "total": 1920,
+      "neural_top1_acc": 73.18,
+      "grounded_acc": 73.18
+    },
+    "decrease_or_not": {
+      "total": 1922,
+      "neural_top1_acc": 73.31,
+      "grounded_acc": 73.31
+    },
+    "smallest_change": {
+      "total": 1200,
+      "neural_top1_acc": 32.92,
+      "grounded_acc": 29.0
+    },
+    "largest_change": {
+      "total": 1200,
+      "neural_top1_acc": 55.92,
+      "grounded_acc": 67.08
+    },
+    "change_to_what": {
+      "total": 1239,
+      "neural_top1_acc": 57.95,
+      "grounded_acc": 63.52
+    },
+    "change_ratio": {
+      "total": 800,
+      "neural_top1_acc": 48.62,
+      "grounded_acc": 57.5
+    },
+    "change_ratio_types": {
+      "total": 2409,
+      "neural_top1_acc": 72.1,
+      "grounded_acc": 73.64
+    }
+  }
+}

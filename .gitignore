@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+env/
+.venv/
+
+# Datasets (excluded per user instruction)
+im1/
+im2/
+label1/
+label2/
+
+# Checkpoint model weights (>100MB exceeds GitHub limit, total 4.75GB)
+checkpoints/
+*.pth
+*.pt
+*.bin
+*.onnx
+
+# Temporary & Scratch
+scratch/
+.system_generated/
+*.log

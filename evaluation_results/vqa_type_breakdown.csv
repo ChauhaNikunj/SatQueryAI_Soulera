@@ -1,0 +1,9 @@
+Question Type,Count,Neural Top-1 Acc,Grounded Hybrid Acc,Gain
+change_or_not,5751,83.55%,83.55%,+0.00%
+change_ratio,800,48.62%,57.50%,+8.87%
+change_ratio_types,2409,72.10%,73.64%,+1.54%
+change_to_what,1239,57.95%,63.52%,+5.57%
+decrease_or_not,1922,73.31%,73.31%,+0.00%
+increase_or_not,1920,73.18%,73.18%,+0.00%
+largest_change,1200,55.92%,67.08%,+11.17%
+smallest_change,1200,32.92%,29.00%,-3.92%

@@ -1,0 +1,37 @@
+{
+  "index": 4,
+  "pair": "06565.png",
+  "total_changed_percent": 0.36,
+  "change_description": "No significant land-cover change detected between the two images.",
+  "vqa_results": [
+    {
+      "question": "Have the regions of buildings changed?",
+      "answer": "no",
+      "confidence": 100.0,
+      "method": "grounded",
+      "details": "Calculated total change < 0.5% (0.4%)"
+    },
+    {
+      "question": "What is the percentage of changed areas?",
+      "answer": "0",
+      "confidence": 100.0,
+      "method": "grounded",
+      "details": "Calculated total changed area: 0.4%"
+    },
+    {
+      "question": "Did the areas of trees change?",
+      "answer": "no",
+      "confidence": 100.0,
+      "method": "grounded",
+      "details": "Calculated total change < 0.5% (0.4%)"
+    },
+    {
+      "question": "What type of change is the largest?",
+      "answer": "buildings",
+      "confidence": 100.0,
+      "method": "grounded",
+      "details": "Largest detected change area: buildings"
+    }
+  ],
+  "dashboard_image": "dashboard_04_06565.png"
+}

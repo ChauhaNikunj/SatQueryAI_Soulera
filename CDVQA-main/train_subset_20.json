@@ -1,0 +1,4908 @@
+[
+  {
+    "file_name": "00003.png",
+    "qa_pairs": [
+      {
+        "question_id": 33708,
+        "question": "Did the regions of non-vegetated ground surface change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33709,
+        "question": "Did the regions of trees change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33710,
+        "question": "Did the regions of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33711,
+        "question": "Did the areas of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33712,
+        "question": "Did the areas of non-vegetated ground surface change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33713,
+        "question": "Have the areas of trees changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33714,
+        "question": "Have the areas of low vegetation changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33715,
+        "question": "Did the areas of playgrounds change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33716,
+        "question": "Did the regions of non-vegetated ground surface change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33717,
+        "question": "Have the regions of low vegetation changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33718,
+        "question": "Have the areas of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33719,
+        "question": "Have the areas of buildings changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33720,
+        "question": "Have the regions of playgrounds changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33721,
+        "question": "Did the regions of non-vegetated ground surface increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33722,
+        "question": "Have the areas of trees increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33723,
+        "question": "Have the regions of water increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33724,
+        "question": "Have the areas of playgrounds increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33725,
+        "question": "Did the regions of trees decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33726,
+        "question": "Have the regions of low vegetation decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33727,
+        "question": "Have the regions of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33728,
+        "question": "Have the regions of buildings decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33729,
+        "question": "Have the areas of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33730,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 33731,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 33732,
+        "question": "What is the smallest change in the pre-event image?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 33733,
+        "question": "What type of change is the smallest in the post-change image?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 33734,
+        "question": "What type of change is the largest in the pre-change image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 33735,
+        "question": "What is the largest change in the second image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 33736,
+        "question": "What have the areas of non-vegetated ground surface in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 33737,
+        "question": "What have the regions of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "water"
+      },
+      {
+        "question_id": 33738,
+        "question": "What is the change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "30_to_40"
+      },
+      {
+        "question_id": 33739,
+        "question": "How much of the area has not changed?",
+        "type": "change_ratio",
+        "answer": "60_to_70"
+      },
+      {
+        "question_id": 33740,
+        "question": "What is the change percentage of trees in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 33741,
+        "question": "What is the change percentage of low vegetation in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 33742,
+        "question": "What is the change ratio of trees in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 33743,
+        "question": "What is the change proportion of playgrounds in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "00011.png",
+    "qa_pairs": [
+      {
+        "question_id": 43810,
+        "question": "Did the areas of non-vegetated ground surface change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43811,
+        "question": "Have the areas of trees changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43812,
+        "question": "Did the regions of water change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43813,
+        "question": "Did the regions of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 43814,
+        "question": "Have the regions of non-vegetated ground surface changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43815,
+        "question": "Did the regions of trees change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43816,
+        "question": "Did the areas of water change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43817,
+        "question": "Have the areas of playgrounds changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 43818,
+        "question": "Have the areas of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43819,
+        "question": "Have the areas of low vegetation changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43820,
+        "question": "Have the areas of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43821,
+        "question": "Have the areas of buildings changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43822,
+        "question": "Have the areas of playgrounds changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 43823,
+        "question": "Have the areas of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43824,
+        "question": "Did the areas of low vegetation increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 43825,
+        "question": "Have the regions of water increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43826,
+        "question": "Did the areas of buildings increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 43827,
+        "question": "Have the regions of trees decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 43828,
+        "question": "Did the regions of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43829,
+        "question": "Have the regions of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 43830,
+        "question": "Did the areas of buildings decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 43831,
+        "question": "Have the regions of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 43832,
+        "question": "What type of change is the smallest?",
+        "type": "smallest_change",
+        "answer": "water"
+      },
+      {
+        "question_id": 43833,
+        "question": "What type of change is the largest?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 43834,
+        "question": "What is the smallest change in the pre-change image?",
+        "type": "smallest_change",
+        "answer": "water"
+      },
+      {
+        "question_id": 43835,
+        "question": "What is the smallest change in the post-change image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 43836,
+        "question": "What type of change is the largest in the pre-event image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 43837,
+        "question": "What is the largest change in the post-event image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 43838,
+        "question": "What have the areas of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 43839,
+        "question": "What have the areas of trees in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 43840,
+        "question": "What have the areas of low vegetation in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 43841,
+        "question": "What have the regions of water in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 43842,
+        "question": "What have the regions of buildings in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 43843,
+        "question": "What is the change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "60_to_70"
+      },
+      {
+        "question_id": 43844,
+        "question": "What is the percentage of unchanged areas?",
+        "type": "change_ratio",
+        "answer": "30_to_40"
+      },
+      {
+        "question_id": 43845,
+        "question": "What is the change percentage of water in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 43846,
+        "question": "How much area of buildings has changed in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 43847,
+        "question": "What is the change ratio of non-vegetated ground surface in the second image?",
+        "type": "change_ratio_types",
+        "answer": "30_to_40"
+      },
+      {
+        "question_id": 43848,
+        "question": "What is the change ratio of low vegetation in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      }
+    ]
+  },
+  {
+    "file_name": "00133.png",
+    "qa_pairs": [
+      {
+        "question_id": 63608,
+        "question": "Did the areas of non-vegetated ground surface change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63609,
+        "question": "Did the areas of trees change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63610,
+        "question": "Have the regions of low vegetation changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63611,
+        "question": "Have the regions of water changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63612,
+        "question": "Did the areas of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63613,
+        "question": "Have the regions of trees changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63614,
+        "question": "Have the areas of buildings changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63615,
+        "question": "Have the areas of non-vegetated ground surface changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63616,
+        "question": "Have the regions of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63617,
+        "question": "Did the regions of low vegetation change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63618,
+        "question": "Have the areas of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63619,
+        "question": "Have the areas of buildings changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63620,
+        "question": "Did the regions of playgrounds change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63621,
+        "question": "Did the areas of non-vegetated ground surface increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63622,
+        "question": "Did the areas of trees increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63623,
+        "question": "Did the areas of low vegetation increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63624,
+        "question": "Have the regions of buildings increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63625,
+        "question": "Did the areas of playgrounds increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63626,
+        "question": "Have the areas of non-vegetated ground surface decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63627,
+        "question": "Have the regions of trees decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63628,
+        "question": "Have the regions of low vegetation decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63629,
+        "question": "Did the regions of playgrounds decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63630,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 63631,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 63632,
+        "question": "What is the smallest change in the first image?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 63633,
+        "question": "What type of change is the smallest in the post-change image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 63634,
+        "question": "What is the largest change in the pre-event image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 63635,
+        "question": "What is the largest change in the post-change image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 63636,
+        "question": "What have the areas of non-vegetated ground surface in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 63637,
+        "question": "What have the regions of trees in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 63638,
+        "question": "What have the areas of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "trees"
+      },
+      {
+        "question_id": 63639,
+        "question": "What have the regions of buildings in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 63640,
+        "question": "What is the percentage of changed regions?",
+        "type": "change_ratio",
+        "answer": "20_to_30"
+      },
+      {
+        "question_id": 63641,
+        "question": "What is the percentage of non-change regions?",
+        "type": "change_ratio",
+        "answer": "70_to_80"
+      },
+      {
+        "question_id": 63642,
+        "question": "What is the change ratio of trees in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 63643,
+        "question": "What is the change ratio of buildings in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 63644,
+        "question": "What is the change proportion of playgrounds in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "00135.png",
+    "qa_pairs": [
+      {
+        "question_id": 41690,
+        "question": "Have the areas of non-vegetated ground surface changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41691,
+        "question": "Did the regions of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41692,
+        "question": "Did the regions of buildings change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41693,
+        "question": "Did the regions of non-vegetated ground surface change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41694,
+        "question": "Have the regions of trees changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41695,
+        "question": "Did the areas of water change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41696,
+        "question": "Did the regions of buildings change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41697,
+        "question": "Have the regions of non-vegetated ground surface changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41698,
+        "question": "Have the areas of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41699,
+        "question": "Did the regions of low vegetation change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41700,
+        "question": "Have the regions of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41701,
+        "question": "Did the regions of playgrounds change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41702,
+        "question": "Have the areas of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41703,
+        "question": "Did the regions of trees increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41704,
+        "question": "Did the regions of low vegetation increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41705,
+        "question": "Did the regions of water increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41706,
+        "question": "Did the areas of buildings increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41707,
+        "question": "Did the regions of playgrounds increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41708,
+        "question": "Have the areas of non-vegetated ground surface decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41709,
+        "question": "Did the regions of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41710,
+        "question": "Have the areas of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41711,
+        "question": "Have the areas of buildings decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 41712,
+        "question": "Have the areas of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 41713,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 41714,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 41715,
+        "question": "What type of change is the smallest in the pre-change image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 41716,
+        "question": "What type of change is the smallest in the post-event image?",
+        "type": "smallest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 41717,
+        "question": "What type of change is the largest in the first image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 41718,
+        "question": "What is the largest change in the second image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 41719,
+        "question": "What have the regions of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 41720,
+        "question": "What have the areas of trees in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 41721,
+        "question": "What have the areas of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "trees"
+      },
+      {
+        "question_id": 41722,
+        "question": "What have the areas of buildings in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 41723,
+        "question": "What is the percentage of changed areas?",
+        "type": "change_ratio",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 41724,
+        "question": "What is the non-change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "80_to_90"
+      },
+      {
+        "question_id": 41725,
+        "question": "How much area of non-vegetated ground surface has changed in the first image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 41726,
+        "question": "What is the change proportion of trees in the pre-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 41727,
+        "question": "What is the change ratio of water in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 41728,
+        "question": "How much area of water has changed in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "00830.png",
+    "qa_pairs": [
+      {
+        "question_id": 9421,
+        "question": "Have the areas of non-vegetated ground surface changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9422,
+        "question": "Did the areas of trees change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9423,
+        "question": "Did the regions of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9424,
+        "question": "Have the regions of buildings changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9425,
+        "question": "Did the areas of non-vegetated ground surface change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9426,
+        "question": "Did the areas of trees change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9427,
+        "question": "Did the areas of low vegetation change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9428,
+        "question": "Have the regions of water changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 9429,
+        "question": "Have the areas of buildings changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9430,
+        "question": "Have the areas of playgrounds changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9431,
+        "question": "Have the areas of non-vegetated ground surface changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9432,
+        "question": "Have the areas of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9433,
+        "question": "Did the regions of low vegetation change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9434,
+        "question": "Have the regions of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 9435,
+        "question": "Have the areas of buildings changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9436,
+        "question": "Have the regions of playgrounds changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 9437,
+        "question": "Have the regions of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9438,
+        "question": "Did the areas of trees increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9439,
+        "question": "Did the regions of low vegetation increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 9440,
+        "question": "Did the areas of buildings increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 9441,
+        "question": "Have the regions of playgrounds increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 9442,
+        "question": "Have the areas of non-vegetated ground surface decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 9443,
+        "question": "Did the areas of trees decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 9444,
+        "question": "Did the regions of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9445,
+        "question": "Have the regions of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 9446,
+        "question": "Have the areas of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 9447,
+        "question": "What type of change is the smallest?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 9448,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 9449,
+        "question": "What is the smallest change in the first image?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 9450,
+        "question": "What type of change is the smallest in the second image?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 9451,
+        "question": "What type of change is the largest in the pre-event image?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 9452,
+        "question": "What type of change is the largest in the post-event image?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 9453,
+        "question": "What have the regions of non-vegetated ground surface in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 9454,
+        "question": "What have the regions of trees in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 9455,
+        "question": "What have the areas of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 9456,
+        "question": "What have the areas of buildings in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 9457,
+        "question": "What have the areas of playgrounds in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 9458,
+        "question": "What is the percentage of changed regions?",
+        "type": "change_ratio",
+        "answer": "20_to_30"
+      },
+      {
+        "question_id": 9459,
+        "question": "What is the percentage of unchanged areas?",
+        "type": "change_ratio",
+        "answer": "70_to_80"
+      },
+      {
+        "question_id": 9460,
+        "question": "How much area of non-vegetated ground surface has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 9461,
+        "question": "What is the change proportion of trees in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 9462,
+        "question": "What is the change ratio of playgrounds in the pre-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 9463,
+        "question": "What is the change ratio of non-vegetated ground surface in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 9464,
+        "question": "What is the change ratio of trees in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 9465,
+        "question": "What is the change proportion of low vegetation in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 9466,
+        "question": "How much area of buildings has changed in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 9467,
+        "question": "What is the change ratio of playgrounds in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "01455.png",
+    "qa_pairs": [
+      {
+        "question_id": 12990,
+        "question": "Have the areas of non-vegetated ground surface changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12991,
+        "question": "Have the regions of trees changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12992,
+        "question": "Did the regions of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12993,
+        "question": "Did the regions of water change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12994,
+        "question": "Did the areas of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12995,
+        "question": "Have the areas of non-vegetated ground surface changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12996,
+        "question": "Did the areas of trees change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12997,
+        "question": "Have the areas of low vegetation changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12998,
+        "question": "Did the regions of water change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12999,
+        "question": "Have the regions of buildings changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 13000,
+        "question": "Did the areas of playgrounds change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 13001,
+        "question": "Did the regions of non-vegetated ground surface change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 13002,
+        "question": "Have the areas of low vegetation changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 13003,
+        "question": "Did the areas of buildings change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 13004,
+        "question": "Have the areas of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 13005,
+        "question": "Have the areas of low vegetation increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 13006,
+        "question": "Did the areas of water increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 13007,
+        "question": "Have the areas of buildings increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 13008,
+        "question": "Did the areas of playgrounds increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 13009,
+        "question": "Did the regions of non-vegetated ground surface decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 13010,
+        "question": "Have the regions of low vegetation decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 13011,
+        "question": "Did the regions of water decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 13012,
+        "question": "Did the areas of buildings decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 13013,
+        "question": "Have the areas of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 13014,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "water"
+      },
+      {
+        "question_id": 13015,
+        "question": "What type of change is the largest?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 13016,
+        "question": "What type of change is the smallest in the first image?",
+        "type": "smallest_change",
+        "answer": "water"
+      },
+      {
+        "question_id": 13017,
+        "question": "What type of change is the smallest in the second image?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 13018,
+        "question": "What type of change is the largest in the pre-change image?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 13019,
+        "question": "What type of change is the largest in the second image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 13020,
+        "question": "What have the regions of non-vegetated ground surface in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "trees"
+      },
+      {
+        "question_id": 13021,
+        "question": "What have the regions of trees in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 13022,
+        "question": "What have the areas of water in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "trees"
+      },
+      {
+        "question_id": 13023,
+        "question": "What have the regions of buildings in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 13024,
+        "question": "What is the percentage of changed regions?",
+        "type": "change_ratio",
+        "answer": "20_to_30"
+      },
+      {
+        "question_id": 13025,
+        "question": "What is the percentage of unchanged areas?",
+        "type": "change_ratio",
+        "answer": "70_to_80"
+      },
+      {
+        "question_id": 13026,
+        "question": "What is the change proportion of non-vegetated ground surface in the pre-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 13027,
+        "question": "What is the change ratio of trees in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 13028,
+        "question": "What is the change percentage of low vegetation in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 13029,
+        "question": "What is the change percentage of water in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 13030,
+        "question": "What is the change percentage of non-vegetated ground surface in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 13031,
+        "question": "What is the change percentage of trees in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 13032,
+        "question": "What is the change proportion of water in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "01536.png",
+    "qa_pairs": [
+      {
+        "question_id": 12668,
+        "question": "Have the areas of non-vegetated ground surface changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12669,
+        "question": "Have the areas of trees changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12670,
+        "question": "Did the areas of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12671,
+        "question": "Have the regions of water changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12672,
+        "question": "Did the areas of non-vegetated ground surface change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12673,
+        "question": "Did the areas of trees change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12674,
+        "question": "Did the regions of water change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12675,
+        "question": "Did the areas of playgrounds change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12676,
+        "question": "Have the regions of non-vegetated ground surface changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12677,
+        "question": "Did the areas of trees change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12678,
+        "question": "Did the areas of water change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12679,
+        "question": "Did the areas of buildings change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12680,
+        "question": "Did the areas of playgrounds change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12681,
+        "question": "Have the regions of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12682,
+        "question": "Have the regions of low vegetation increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12683,
+        "question": "Have the regions of water increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12684,
+        "question": "Did the regions of buildings increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12685,
+        "question": "Have the regions of playgrounds increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12686,
+        "question": "Did the areas of trees decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12687,
+        "question": "Did the regions of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 12688,
+        "question": "Did the regions of water decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12689,
+        "question": "Have the regions of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 12690,
+        "question": "What type of change is the smallest?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 12691,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 12692,
+        "question": "What type of change is the smallest in the first image?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 12693,
+        "question": "What is the smallest change in the second image?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 12694,
+        "question": "What type of change is the largest in the pre-event image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 12695,
+        "question": "What type of change is the largest in the second image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 12696,
+        "question": "What have the areas of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 12697,
+        "question": "What have the regions of trees in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 12698,
+        "question": "What have the areas of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 12699,
+        "question": "What have the areas of buildings in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 12700,
+        "question": "How much of the area has changed?",
+        "type": "change_ratio",
+        "answer": "20_to_30"
+      },
+      {
+        "question_id": 12701,
+        "question": "What is the non-change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "70_to_80"
+      },
+      {
+        "question_id": 12702,
+        "question": "How much area of non-vegetated ground surface has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 12703,
+        "question": "How much area of trees has changed in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 12704,
+        "question": "What is the change percentage of playgrounds in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 12705,
+        "question": "What is the change ratio of playgrounds in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "01619.png",
+    "qa_pairs": [
+      {
+        "question_id": 33301,
+        "question": "Did the regions of non-vegetated ground surface change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33302,
+        "question": "Did the areas of trees change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33303,
+        "question": "Did the regions of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33304,
+        "question": "Have the regions of water changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33305,
+        "question": "Did the areas of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33306,
+        "question": "Did the areas of non-vegetated ground surface change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33307,
+        "question": "Have the areas of trees changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33308,
+        "question": "Did the areas of low vegetation change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33309,
+        "question": "Did the regions of water change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33310,
+        "question": "Did the areas of buildings change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33311,
+        "question": "Have the regions of playgrounds changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33312,
+        "question": "Did the regions of non-vegetated ground surface change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33313,
+        "question": "Have the regions of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33314,
+        "question": "Have the regions of low vegetation changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33315,
+        "question": "Did the areas of water change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33316,
+        "question": "Did the regions of buildings change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33317,
+        "question": "Have the regions of playgrounds changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33318,
+        "question": "Did the areas of non-vegetated ground surface increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33319,
+        "question": "Have the regions of low vegetation increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33320,
+        "question": "Have the areas of buildings increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33321,
+        "question": "Have the regions of non-vegetated ground surface decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 33322,
+        "question": "Did the regions of trees decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33323,
+        "question": "Did the regions of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33324,
+        "question": "Have the regions of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33325,
+        "question": "Did the areas of playgrounds decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 33326,
+        "question": "What type of change is the smallest?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 33327,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 33328,
+        "question": "What is the smallest change in the first image?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 33329,
+        "question": "What type of change is the smallest in the post-event image?",
+        "type": "smallest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 33330,
+        "question": "What type of change is the largest in the pre-change image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 33331,
+        "question": "What is the largest change in the second image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 33332,
+        "question": "What have the areas of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 33333,
+        "question": "What have the regions of low vegetation in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 33334,
+        "question": "What have the regions of buildings in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 33335,
+        "question": "What is the percentage of changed areas?",
+        "type": "change_ratio",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 33336,
+        "question": "How much of the area has not changed?",
+        "type": "change_ratio",
+        "answer": "80_to_90"
+      },
+      {
+        "question_id": 33337,
+        "question": "How much area of low vegetation has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 33338,
+        "question": "What is the change ratio of water in the pre-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 33339,
+        "question": "What is the change percentage of playgrounds in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 33340,
+        "question": "What is the change ratio of non-vegetated ground surface in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 33341,
+        "question": "What is the change proportion of water in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 33342,
+        "question": "What is the change percentage of playgrounds in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "02352.png",
+    "qa_pairs": [
+      {
+        "question_id": 63765,
+        "question": "Did the areas of non-vegetated ground surface change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63766,
+        "question": "Have the areas of low vegetation changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63767,
+        "question": "Did the areas of water change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63768,
+        "question": "Have the areas of buildings changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63769,
+        "question": "Did the areas of non-vegetated ground surface change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63770,
+        "question": "Did the regions of low vegetation change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63771,
+        "question": "Did the regions of buildings change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63772,
+        "question": "Did the areas of playgrounds change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63773,
+        "question": "Have the areas of non-vegetated ground surface changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63774,
+        "question": "Did the areas of trees change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63775,
+        "question": "Did the regions of low vegetation change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63776,
+        "question": "Have the areas of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63777,
+        "question": "Have the regions of playgrounds changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63778,
+        "question": "Did the regions of non-vegetated ground surface increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63779,
+        "question": "Did the regions of trees increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63780,
+        "question": "Have the regions of low vegetation increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63781,
+        "question": "Have the areas of water increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63782,
+        "question": "Did the areas of playgrounds increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63783,
+        "question": "Have the areas of non-vegetated ground surface decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 63784,
+        "question": "Did the areas of trees decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63785,
+        "question": "Did the areas of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63786,
+        "question": "Did the areas of water decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63787,
+        "question": "Did the regions of buildings decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63788,
+        "question": "Did the regions of playgrounds decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 63789,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 63790,
+        "question": "What type of change is the largest?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 63791,
+        "question": "What is the smallest change in the first image?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 63792,
+        "question": "What type of change is the smallest in the second image?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 63793,
+        "question": "What is the largest change in the first image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 63794,
+        "question": "What type of change is the largest in the post-change image?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 63795,
+        "question": "What have the areas of non-vegetated ground surface in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 63796,
+        "question": "What is the percentage of changed regions?",
+        "type": "change_ratio",
+        "answer": "30_to_40"
+      },
+      {
+        "question_id": 63797,
+        "question": "What is the percentage of unchanged areas?",
+        "type": "change_ratio",
+        "answer": "60_to_70"
+      },
+      {
+        "question_id": 63798,
+        "question": "What is the change percentage of non-vegetated ground surface in the first image?",
+        "type": "change_ratio_types",
+        "answer": "30_to_40"
+      },
+      {
+        "question_id": 63799,
+        "question": "What is the change ratio of trees in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 63800,
+        "question": "What is the change percentage of low vegetation in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 63801,
+        "question": "What is the change ratio of water in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "02613.png",
+    "qa_pairs": [
+      {
+        "question_id": 3461,
+        "question": "Did the regions of non-vegetated ground surface change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3462,
+        "question": "Did the regions of trees change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3463,
+        "question": "Have the regions of low vegetation changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3464,
+        "question": "Have the areas of water changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3465,
+        "question": "Did the regions of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3466,
+        "question": "Have the regions of non-vegetated ground surface changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3467,
+        "question": "Have the regions of trees changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3468,
+        "question": "Have the regions of water changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3469,
+        "question": "Did the areas of buildings change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3470,
+        "question": "Did the areas of playgrounds change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3471,
+        "question": "Have the regions of non-vegetated ground surface changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3472,
+        "question": "Did the regions of trees change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3473,
+        "question": "Did the areas of low vegetation change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3474,
+        "question": "Have the areas of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3475,
+        "question": "Have the regions of playgrounds changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3476,
+        "question": "Have the regions of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3477,
+        "question": "Have the regions of trees increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3478,
+        "question": "Did the areas of low vegetation increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3479,
+        "question": "Have the areas of water increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3480,
+        "question": "Have the regions of playgrounds increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3481,
+        "question": "Have the areas of non-vegetated ground surface decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3482,
+        "question": "Have the regions of trees decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3483,
+        "question": "Have the regions of low vegetation decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 3484,
+        "question": "Have the areas of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3485,
+        "question": "Have the areas of buildings decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 3486,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 3487,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 3488,
+        "question": "What type of change is the smallest in the pre-change image?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 3489,
+        "question": "What is the smallest change in the post-event image?",
+        "type": "smallest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 3490,
+        "question": "What type of change is the largest in the pre-event image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 3491,
+        "question": "What type of change is the largest in the second image?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 3492,
+        "question": "What have the areas of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "trees"
+      },
+      {
+        "question_id": 3493,
+        "question": "What have the areas of trees in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 3494,
+        "question": "What have the regions of low vegetation in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 3495,
+        "question": "What have the areas of buildings in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 3496,
+        "question": "What is the percentage of changed areas?",
+        "type": "change_ratio",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 3497,
+        "question": "What is the non-change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "90_to_100"
+      },
+      {
+        "question_id": 3498,
+        "question": "How much area of trees has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 3499,
+        "question": "What is the change ratio of low vegetation in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 3500,
+        "question": "How much area of water has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 3501,
+        "question": "What is the change percentage of buildings in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 3502,
+        "question": "What is the change proportion of non-vegetated ground surface in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      }
+    ]
+  },
+  {
+    "file_name": "02748.png",
+    "qa_pairs": [
+      {
+        "question_id": 32065,
+        "question": "Have the areas of non-vegetated ground surface changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32066,
+        "question": "Have the regions of trees changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32067,
+        "question": "Have the areas of low vegetation changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32068,
+        "question": "Did the regions of water change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32069,
+        "question": "Have the areas of buildings changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32070,
+        "question": "Did the areas of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32071,
+        "question": "Did the areas of non-vegetated ground surface change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32072,
+        "question": "Did the regions of water change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32073,
+        "question": "Have the regions of buildings changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32074,
+        "question": "Did the areas of playgrounds change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32075,
+        "question": "Have the regions of non-vegetated ground surface changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32076,
+        "question": "Have the regions of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32077,
+        "question": "Have the areas of low vegetation changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32078,
+        "question": "Did the areas of buildings change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32079,
+        "question": "Did the regions of playgrounds change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32080,
+        "question": "Have the areas of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32081,
+        "question": "Have the regions of trees increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32082,
+        "question": "Did the areas of low vegetation increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32083,
+        "question": "Have the regions of water increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32084,
+        "question": "Did the areas of trees decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32085,
+        "question": "Did the regions of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32086,
+        "question": "Did the regions of water decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32087,
+        "question": "Have the areas of buildings decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 32088,
+        "question": "Have the regions of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 32089,
+        "question": "What type of change is the smallest?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 32090,
+        "question": "What type of change is the largest?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 32091,
+        "question": "What type of change is the smallest in the pre-event image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 32092,
+        "question": "What type of change is the smallest in the post-change image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 32093,
+        "question": "What type of change is the largest in the pre-change image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 32094,
+        "question": "What type of change is the largest in the second image?",
+        "type": "largest_change",
+        "answer": "playgrounds"
+      },
+      {
+        "question_id": 32095,
+        "question": "What have the regions of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "playgrounds"
+      },
+      {
+        "question_id": 32096,
+        "question": "What have the regions of buildings in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 32097,
+        "question": "How much of the area has changed?",
+        "type": "change_ratio",
+        "answer": "40_to_50"
+      },
+      {
+        "question_id": 32098,
+        "question": "What is the non-change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "50_to_60"
+      },
+      {
+        "question_id": 32099,
+        "question": "What is the change percentage of trees in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 32100,
+        "question": "What is the change ratio of buildings in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 32101,
+        "question": "What is the change percentage of trees in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 32102,
+        "question": "How much area of low vegetation has changed in the second image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 32103,
+        "question": "What is the change ratio of water in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 32104,
+        "question": "What is the change percentage of playgrounds in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "20_to_30"
+      }
+    ]
+  },
+  {
+    "file_name": "02803.png",
+    "qa_pairs": [
+      {
+        "question_id": 58525,
+        "question": "Did the regions of non-vegetated ground surface change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58526,
+        "question": "Have the regions of trees changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58527,
+        "question": "Did the regions of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58528,
+        "question": "Have the regions of water changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58529,
+        "question": "Have the areas of buildings changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58530,
+        "question": "Did the areas of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58531,
+        "question": "Have the regions of non-vegetated ground surface changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58532,
+        "question": "Did the areas of trees change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58533,
+        "question": "Did the regions of low vegetation change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58534,
+        "question": "Have the areas of playgrounds changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58535,
+        "question": "Have the regions of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58536,
+        "question": "Have the regions of low vegetation changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58537,
+        "question": "Have the regions of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58538,
+        "question": "Have the regions of buildings changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58539,
+        "question": "Have the regions of playgrounds changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58540,
+        "question": "Have the regions of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58541,
+        "question": "Did the regions of trees increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58542,
+        "question": "Did the areas of water increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58543,
+        "question": "Have the areas of buildings increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58544,
+        "question": "Have the regions of playgrounds increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58545,
+        "question": "Have the regions of non-vegetated ground surface decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58546,
+        "question": "Did the regions of trees decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58547,
+        "question": "Did the regions of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 58548,
+        "question": "Did the areas of playgrounds decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 58549,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 58550,
+        "question": "What type of change is the largest?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 58551,
+        "question": "What type of change is the smallest in the pre-change image?",
+        "type": "smallest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 58552,
+        "question": "What type of change is the smallest in the second image?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 58553,
+        "question": "What is the largest change in the pre-change image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 58554,
+        "question": "What is the largest change in the second image?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 58555,
+        "question": "What have the areas of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 58556,
+        "question": "What have the regions of trees in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 58557,
+        "question": "What have the areas of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 58558,
+        "question": "What have the regions of buildings in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 58559,
+        "question": "What is the percentage of changed regions?",
+        "type": "change_ratio",
+        "answer": "30_to_40"
+      },
+      {
+        "question_id": 58560,
+        "question": "How much of the area has not changed?",
+        "type": "change_ratio",
+        "answer": "60_to_70"
+      },
+      {
+        "question_id": 58561,
+        "question": "How much area of buildings has changed in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 58562,
+        "question": "What is the change proportion of playgrounds in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 58563,
+        "question": "What is the change ratio of non-vegetated ground surface in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 58564,
+        "question": "What is the change percentage of buildings in the second image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      }
+    ]
+  },
+  {
+    "file_name": "03285.png",
+    "qa_pairs": [
+      {
+        "question_id": 17053,
+        "question": "Did the areas of non-vegetated ground surface change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17054,
+        "question": "Did the regions of trees change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17055,
+        "question": "Have the areas of low vegetation changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17056,
+        "question": "Have the areas of buildings changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17057,
+        "question": "Did the regions of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17058,
+        "question": "Have the areas of non-vegetated ground surface changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17059,
+        "question": "Did the areas of low vegetation change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17060,
+        "question": "Have the areas of water changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17061,
+        "question": "Did the areas of buildings change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17062,
+        "question": "Did the areas of non-vegetated ground surface change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17063,
+        "question": "Have the areas of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 17064,
+        "question": "Have the regions of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 17065,
+        "question": "Have the areas of buildings changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17066,
+        "question": "Have the areas of trees increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 17067,
+        "question": "Have the regions of low vegetation increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 17068,
+        "question": "Did the areas of water increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 17069,
+        "question": "Have the regions of buildings increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17070,
+        "question": "Did the regions of non-vegetated ground surface decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 17071,
+        "question": "Did the areas of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17072,
+        "question": "Did the regions of water decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 17073,
+        "question": "Have the regions of buildings decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 17074,
+        "question": "Have the areas of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 17075,
+        "question": "What type of change is the smallest?",
+        "type": "smallest_change",
+        "answer": "water"
+      },
+      {
+        "question_id": 17076,
+        "question": "What type of change is the largest?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 17077,
+        "question": "What type of change is the smallest in the pre-change image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 17078,
+        "question": "What is the smallest change in the second image?",
+        "type": "smallest_change",
+        "answer": "playgrounds"
+      },
+      {
+        "question_id": 17079,
+        "question": "What type of change is the largest in the pre-event image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 17080,
+        "question": "What type of change is the largest in the second image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 17081,
+        "question": "What have the areas of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "playgrounds"
+      },
+      {
+        "question_id": 17082,
+        "question": "What have the regions of trees in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 17083,
+        "question": "What have the regions of low vegetation in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 17084,
+        "question": "What have the regions of water in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 17085,
+        "question": "What have the areas of buildings in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 17086,
+        "question": "How much of the area has changed?",
+        "type": "change_ratio",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 17087,
+        "question": "What is the non-change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "90_to_100"
+      },
+      {
+        "question_id": 17088,
+        "question": "What is the change ratio of trees in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 17089,
+        "question": "How much area of low vegetation has changed in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 17090,
+        "question": "How much area of water has changed in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 17091,
+        "question": "How much area of playgrounds has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 17092,
+        "question": "What is the change ratio of non-vegetated ground surface in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      }
+    ]
+  },
+  {
+    "file_name": "04573.png",
+    "qa_pairs": [
+      {
+        "question_id": 57362,
+        "question": "Have the areas of non-vegetated ground surface changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57363,
+        "question": "Have the areas of trees changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57364,
+        "question": "Have the regions of low vegetation changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57365,
+        "question": "Have the regions of water changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 57366,
+        "question": "Have the regions of buildings changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57367,
+        "question": "Have the regions of playgrounds changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57368,
+        "question": "Did the areas of non-vegetated ground surface change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57369,
+        "question": "Have the areas of trees changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57370,
+        "question": "Did the areas of low vegetation change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57371,
+        "question": "Have the areas of buildings changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57372,
+        "question": "Did the areas of non-vegetated ground surface change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57373,
+        "question": "Did the areas of trees change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57374,
+        "question": "Did the areas of low vegetation change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57375,
+        "question": "Have the regions of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 57376,
+        "question": "Did the regions of buildings change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57377,
+        "question": "Did the areas of playgrounds change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57378,
+        "question": "Have the areas of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57379,
+        "question": "Have the areas of low vegetation increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 57380,
+        "question": "Did the regions of trees decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57381,
+        "question": "Did the areas of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 57382,
+        "question": "Did the areas of water decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 57383,
+        "question": "Have the areas of buildings decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 57384,
+        "question": "Did the areas of playgrounds decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 57385,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "playgrounds"
+      },
+      {
+        "question_id": 57386,
+        "question": "What type of change is the largest?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 57387,
+        "question": "What type of change is the smallest in the first image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 57388,
+        "question": "What is the smallest change in the second image?",
+        "type": "smallest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 57389,
+        "question": "What is the largest change in the first image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 57390,
+        "question": "What is the largest change in the second image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 57391,
+        "question": "What have the regions of non-vegetated ground surface in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 57392,
+        "question": "What have the areas of trees in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 57393,
+        "question": "What have the areas of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 57394,
+        "question": "What have the regions of buildings in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "playgrounds"
+      },
+      {
+        "question_id": 57395,
+        "question": "What is the percentage of changed areas?",
+        "type": "change_ratio",
+        "answer": "40_to_50"
+      },
+      {
+        "question_id": 57396,
+        "question": "What is the percentage of unchanged areas?",
+        "type": "change_ratio",
+        "answer": "50_to_60"
+      },
+      {
+        "question_id": 57397,
+        "question": "What is the change percentage of non-vegetated ground surface in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 57398,
+        "question": "What is the change proportion of trees in the pre-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 57399,
+        "question": "What is the change proportion of low vegetation in the first image?",
+        "type": "change_ratio_types",
+        "answer": "30_to_40"
+      },
+      {
+        "question_id": 57400,
+        "question": "What is the change ratio of low vegetation in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 57401,
+        "question": "What is the change ratio of playgrounds in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      }
+    ]
+  },
+  {
+    "file_name": "04862.png",
+    "qa_pairs": [
+      {
+        "question_id": 52322,
+        "question": "Have the regions of trees changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 52323,
+        "question": "Have the areas of low vegetation changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 52324,
+        "question": "Did the areas of water change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52325,
+        "question": "Did the areas of buildings change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 52326,
+        "question": "Did the areas of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52327,
+        "question": "Have the regions of trees changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52328,
+        "question": "Have the regions of low vegetation changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52329,
+        "question": "Have the regions of water changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52330,
+        "question": "Have the areas of buildings changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 52331,
+        "question": "Did the areas of playgrounds change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52332,
+        "question": "Did the areas of non-vegetated ground surface change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52333,
+        "question": "Have the regions of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 52334,
+        "question": "Did the areas of buildings change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 52335,
+        "question": "Have the areas of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52336,
+        "question": "Have the areas of low vegetation increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 52337,
+        "question": "Have the areas of buildings increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 52338,
+        "question": "Did the regions of non-vegetated ground surface decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 52339,
+        "question": "Did the regions of trees decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52340,
+        "question": "Have the regions of low vegetation decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52341,
+        "question": "Have the regions of buildings decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52342,
+        "question": "Have the regions of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 52343,
+        "question": "What type of change is the smallest?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 52344,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 52345,
+        "question": "What type of change is the smallest in the pre-change image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 52346,
+        "question": "What type of change is the smallest in the second image?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 52347,
+        "question": "What type of change is the largest in the pre-change image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 52348,
+        "question": "What is the largest change in the post-change image?",
+        "type": "largest_change",
+        "answer": "trees"
+      },
+      {
+        "question_id": 52349,
+        "question": "What have the areas of non-vegetated ground surface in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "trees"
+      },
+      {
+        "question_id": 52350,
+        "question": "What have the areas of buildings in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 52351,
+        "question": "What is the percentage of changed regions?",
+        "type": "change_ratio",
+        "answer": "20_to_30"
+      },
+      {
+        "question_id": 52352,
+        "question": "What is the percentage of unchanged areas?",
+        "type": "change_ratio",
+        "answer": "70_to_80"
+      },
+      {
+        "question_id": 52353,
+        "question": "What is the change proportion of trees in the pre-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 52354,
+        "question": "How much area of low vegetation has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 52355,
+        "question": "What is the change percentage of playgrounds in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 52356,
+        "question": "What is the change ratio of non-vegetated ground surface in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 52357,
+        "question": "What is the change percentage of trees in the second image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 52358,
+        "question": "What is the change percentage of low vegetation in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 52359,
+        "question": "What is the change percentage of water in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 52360,
+        "question": "How much area of buildings has changed in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 52361,
+        "question": "What is the change ratio of playgrounds in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "05698.png",
+    "qa_pairs": [
+      {
+        "question_id": 1620,
+        "question": "Did the regions of non-vegetated ground surface change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1621,
+        "question": "Did the areas of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1622,
+        "question": "Have the areas of water changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1623,
+        "question": "Did the regions of buildings change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1624,
+        "question": "Have the regions of playgrounds changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1625,
+        "question": "Have the areas of non-vegetated ground surface changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1626,
+        "question": "Did the areas of trees change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1627,
+        "question": "Have the regions of low vegetation changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1628,
+        "question": "Have the areas of water changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1629,
+        "question": "Have the areas of playgrounds changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1630,
+        "question": "Have the areas of non-vegetated ground surface changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1631,
+        "question": "Have the regions of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1632,
+        "question": "Did the areas of low vegetation change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1633,
+        "question": "Have the areas of water changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1634,
+        "question": "Did the areas of buildings change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1635,
+        "question": "Have the regions of playgrounds changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1636,
+        "question": "Have the regions of non-vegetated ground surface increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1637,
+        "question": "Have the regions of trees increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1638,
+        "question": "Did the regions of low vegetation increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1639,
+        "question": "Have the regions of water increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1640,
+        "question": "Did the areas of buildings increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1641,
+        "question": "Have the areas of playgrounds increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1642,
+        "question": "Did the regions of non-vegetated ground surface decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1643,
+        "question": "Did the areas of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1644,
+        "question": "Have the areas of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 1645,
+        "question": "Did the areas of buildings decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1646,
+        "question": "Did the areas of playgrounds decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 1647,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "water"
+      },
+      {
+        "question_id": 1648,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 1649,
+        "question": "What is the smallest change in the pre-event image?",
+        "type": "smallest_change",
+        "answer": "water"
+      },
+      {
+        "question_id": 1650,
+        "question": "What is the smallest change in the second image?",
+        "type": "smallest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 1651,
+        "question": "What is the largest change in the first image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 1652,
+        "question": "What is the largest change in the second image?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 1653,
+        "question": "What have the areas of non-vegetated ground surface in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 1654,
+        "question": "What have the areas of water in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 1655,
+        "question": "What have the areas of buildings in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 1656,
+        "question": "What is the percentage of changed regions?",
+        "type": "change_ratio",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 1657,
+        "question": "What is the percentage of non-change regions?",
+        "type": "change_ratio",
+        "answer": "80_to_90"
+      },
+      {
+        "question_id": 1658,
+        "question": "What is the change ratio of non-vegetated ground surface in the pre-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 1659,
+        "question": "How much area of low vegetation has changed in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 1660,
+        "question": "What is the change proportion of water in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 1661,
+        "question": "What is the change ratio of trees in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 1662,
+        "question": "What is the change percentage of playgrounds in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "07907.png",
+    "qa_pairs": [
+      {
+        "question_id": 60139,
+        "question": "Have the areas of trees changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60140,
+        "question": "Did the regions of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60141,
+        "question": "Did the areas of water change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60142,
+        "question": "Have the areas of buildings changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60143,
+        "question": "Did the regions of playgrounds change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60144,
+        "question": "Did the areas of water change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60145,
+        "question": "Have the regions of buildings changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60146,
+        "question": "Did the regions of playgrounds change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60147,
+        "question": "Did the areas of non-vegetated ground surface change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60148,
+        "question": "Did the regions of trees change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60149,
+        "question": "Have the areas of low vegetation changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60150,
+        "question": "Did the areas of buildings change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60151,
+        "question": "Have the regions of playgrounds changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60152,
+        "question": "Did the areas of trees increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60153,
+        "question": "Have the areas of water increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60154,
+        "question": "Have the regions of buildings increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60155,
+        "question": "Have the regions of playgrounds increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60156,
+        "question": "Did the regions of non-vegetated ground surface decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60157,
+        "question": "Have the areas of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 60158,
+        "question": "Did the areas of buildings decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60159,
+        "question": "Did the regions of playgrounds decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 60160,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "water"
+      },
+      {
+        "question_id": 60161,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 60162,
+        "question": "What is the smallest change in the pre-change image?",
+        "type": "smallest_change",
+        "answer": "water"
+      },
+      {
+        "question_id": 60163,
+        "question": "What is the smallest change in the second image?",
+        "type": "smallest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 60164,
+        "question": "What type of change is the largest in the pre-change image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 60165,
+        "question": "What is the largest change in the second image?",
+        "type": "largest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 60166,
+        "question": "What have the regions of non-vegetated ground surface in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 60167,
+        "question": "What have the areas of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 60168,
+        "question": "What have the areas of water in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 60169,
+        "question": "What have the areas of buildings in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 60170,
+        "question": "How much of the area has changed?",
+        "type": "change_ratio",
+        "answer": "20_to_30"
+      },
+      {
+        "question_id": 60171,
+        "question": "What is the non-change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "70_to_80"
+      },
+      {
+        "question_id": 60172,
+        "question": "What is the change ratio of water in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 60173,
+        "question": "What is the change percentage of buildings in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 60174,
+        "question": "What is the change percentage of non-vegetated ground surface in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 60175,
+        "question": "What is the change percentage of trees in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 60176,
+        "question": "What is the change proportion of water in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 60177,
+        "question": "What is the change proportion of buildings in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 60178,
+        "question": "What is the change proportion of playgrounds in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "08464.png",
+    "qa_pairs": [
+      {
+        "question_id": 46648,
+        "question": "Have the regions of non-vegetated ground surface changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 46649,
+        "question": "Did the regions of trees change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46650,
+        "question": "Have the regions of low vegetation changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 46651,
+        "question": "Did the regions of buildings change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 46652,
+        "question": "Have the regions of playgrounds changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46653,
+        "question": "Have the areas of non-vegetated ground surface changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 46654,
+        "question": "Have the regions of water changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46655,
+        "question": "Have the regions of buildings changed in the first image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 46656,
+        "question": "Have the areas of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46657,
+        "question": "Have the regions of low vegetation changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 46658,
+        "question": "Did the regions of water change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46659,
+        "question": "Did the regions of non-vegetated ground surface increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46660,
+        "question": "Did the regions of low vegetation increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 46661,
+        "question": "Did the regions of buildings increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46662,
+        "question": "Have the regions of playgrounds increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46663,
+        "question": "Did the areas of non-vegetated ground surface decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 46664,
+        "question": "Have the areas of trees decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46665,
+        "question": "Have the regions of low vegetation decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46666,
+        "question": "Have the regions of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46667,
+        "question": "Did the areas of buildings decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 46668,
+        "question": "Have the areas of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 46669,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 46670,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 46671,
+        "question": "What is the smallest change in the first image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 46672,
+        "question": "What is the smallest change in the post-change image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 46673,
+        "question": "What type of change is the largest in the pre-change image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 46674,
+        "question": "What type of change is the largest in the second image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 46675,
+        "question": "What have the areas of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 46676,
+        "question": "What have the regions of buildings in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 46677,
+        "question": "What is the percentage of changed regions?",
+        "type": "change_ratio",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 46678,
+        "question": "What is the percentage of unchanged areas?",
+        "type": "change_ratio",
+        "answer": "80_to_90"
+      },
+      {
+        "question_id": 46679,
+        "question": "What is the change percentage of trees in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 46680,
+        "question": "What is the change proportion of low vegetation in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 46681,
+        "question": "What is the change proportion of water in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 46682,
+        "question": "What is the change percentage of non-vegetated ground surface in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 46683,
+        "question": "What is the change proportion of trees in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 46684,
+        "question": "What is the change proportion of buildings in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 46685,
+        "question": "What is the change percentage of playgrounds in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  },
+  {
+    "file_name": "09274.png",
+    "qa_pairs": [
+      {
+        "question_id": 4284,
+        "question": "Have the areas of non-vegetated ground surface changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4285,
+        "question": "Did the regions of trees change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4286,
+        "question": "Did the regions of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4287,
+        "question": "Did the areas of buildings change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4288,
+        "question": "Have the areas of playgrounds changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4289,
+        "question": "Did the areas of non-vegetated ground surface change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4290,
+        "question": "Have the regions of trees changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4291,
+        "question": "Did the regions of low vegetation change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4292,
+        "question": "Have the regions of water changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4293,
+        "question": "Have the areas of buildings changed in the first image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4294,
+        "question": "Have the areas of non-vegetated ground surface changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4295,
+        "question": "Have the regions of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4296,
+        "question": "Did the areas of low vegetation change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4297,
+        "question": "Did the areas of water change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4298,
+        "question": "Did the regions of playgrounds change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4299,
+        "question": "Did the regions of non-vegetated ground surface increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4300,
+        "question": "Have the regions of trees increased?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4301,
+        "question": "Have the areas of water increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4302,
+        "question": "Have the areas of non-vegetated ground surface decreased?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 4303,
+        "question": "Did the areas of low vegetation decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4304,
+        "question": "Did the areas of water decrease?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4305,
+        "question": "Have the areas of buildings decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4306,
+        "question": "Have the areas of playgrounds decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 4307,
+        "question": "What type of change is the smallest?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 4308,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 4309,
+        "question": "What type of change is the smallest in the first image?",
+        "type": "smallest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 4310,
+        "question": "What is the smallest change in the post-change image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 4311,
+        "question": "What type of change is the largest in the first image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 4312,
+        "question": "What is the largest change in the second image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 4313,
+        "question": "What have the areas of non-vegetated ground surface in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 4314,
+        "question": "What have the regions of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 4315,
+        "question": "How much of the area has changed?",
+        "type": "change_ratio",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 4316,
+        "question": "How much of the area has not changed?",
+        "type": "change_ratio",
+        "answer": "80_to_90"
+      },
+      {
+        "question_id": 4317,
+        "question": "What is the change ratio of non-vegetated ground surface in the pre-event image?",
+        "type": "change_ratio_types",
+        "answer": "10_to_20"
+      },
+      {
+        "question_id": 4318,
+        "question": "What is the change proportion of water in the first image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 4319,
+        "question": "What is the change percentage of trees in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 4320,
+        "question": "What is the change proportion of buildings in the second image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      }
+    ]
+  },
+  {
+    "file_name": "10427.png",
+    "qa_pairs": [
+      {
+        "question_id": 61042,
+        "question": "Have the areas of non-vegetated ground surface changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61043,
+        "question": "Did the areas of trees change?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61044,
+        "question": "Did the regions of low vegetation change?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61045,
+        "question": "Have the regions of water changed?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61046,
+        "question": "Have the areas of playgrounds changed?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61047,
+        "question": "Did the regions of non-vegetated ground surface change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61048,
+        "question": "Did the regions of low vegetation change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61049,
+        "question": "Did the areas of water change in the pre-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61050,
+        "question": "Did the regions of buildings change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61051,
+        "question": "Did the regions of playgrounds change in the pre-event image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61052,
+        "question": "Did the regions of non-vegetated ground surface change in the post-event image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61053,
+        "question": "Have the regions of trees changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61054,
+        "question": "Have the regions of low vegetation changed in the second image?",
+        "type": "change_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61055,
+        "question": "Have the areas of buildings changed in the second image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61056,
+        "question": "Did the areas of playgrounds change in the post-change image?",
+        "type": "change_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61057,
+        "question": "Did the areas of non-vegetated ground surface increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61058,
+        "question": "Did the areas of trees increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61059,
+        "question": "Did the regions of low vegetation increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61060,
+        "question": "Did the regions of water increase?",
+        "type": "increase_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61061,
+        "question": "Have the areas of buildings increased?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61062,
+        "question": "Did the areas of playgrounds increase?",
+        "type": "increase_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61063,
+        "question": "Did the regions of non-vegetated ground surface decrease?",
+        "type": "decrease_or_not",
+        "answer": "yes"
+      },
+      {
+        "question_id": 61064,
+        "question": "Have the areas of low vegetation decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61065,
+        "question": "Have the regions of water decreased?",
+        "type": "decrease_or_not",
+        "answer": "no"
+      },
+      {
+        "question_id": 61066,
+        "question": "What is the smallest change?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 61067,
+        "question": "What is the largest change?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 61068,
+        "question": "What type of change is the smallest in the pre-change image?",
+        "type": "smallest_change",
+        "answer": "buildings"
+      },
+      {
+        "question_id": 61069,
+        "question": "What type of change is the smallest in the post-change image?",
+        "type": "smallest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 61070,
+        "question": "What is the largest change in the first image?",
+        "type": "largest_change",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 61071,
+        "question": "What is the largest change in the post-event image?",
+        "type": "largest_change",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 61072,
+        "question": "What have the areas of non-vegetated ground surface in the pre-change image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "low_vegetation"
+      },
+      {
+        "question_id": 61073,
+        "question": "What have the regions of low vegetation in the first image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "water"
+      },
+      {
+        "question_id": 61074,
+        "question": "What have the areas of buildings in the pre-event image mainly changed to?",
+        "type": "change_to_what",
+        "answer": "NVG_surface"
+      },
+      {
+        "question_id": 61075,
+        "question": "What is the change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 61076,
+        "question": "What is the non-change ratio of the imagery?",
+        "type": "change_ratio",
+        "answer": "90_to_100"
+      },
+      {
+        "question_id": 61077,
+        "question": "How much area of non-vegetated ground surface has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 61078,
+        "question": "How much area of trees has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 61079,
+        "question": "What is the change percentage of water in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 61080,
+        "question": "How much area of buildings has changed in the pre-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 61081,
+        "question": "What is the change ratio of non-vegetated ground surface in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 61082,
+        "question": "How much area of trees has changed in the post-change image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      },
+      {
+        "question_id": 61083,
+        "question": "What is the change ratio of water in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0_to_10"
+      },
+      {
+        "question_id": 61084,
+        "question": "What is the change ratio of playgrounds in the post-event image?",
+        "type": "change_ratio_types",
+        "answer": "0"
+      }
+    ]
+  }
+]

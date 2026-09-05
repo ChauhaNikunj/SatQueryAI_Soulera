@@ -1,0 +1,37 @@
+{
+  "index": 10,
+  "pair": "08871.png",
+  "total_changed_percent": 28.29,
+  "change_description": "Between the two images, Non-vegetated ground surface increased by 22.5%; Tree cover decreased by 2.8%; Low vegetation decreased by 17.1%; Built-up area decreased by 2.0% (total changed area: 28.3%).",
+  "vqa_results": [
+    {
+      "question": "Have the regions of buildings changed?",
+      "answer": "yes",
+      "confidence": 100.0,
+      "method": "grounded",
+      "details": "Detected buildings changed area: 7.6%"
+    },
+    {
+      "question": "What is the percentage of changed areas?",
+      "answer": "20_to_30",
+      "confidence": 100.0,
+      "method": "grounded",
+      "details": "Calculated total changed area: 28.3%"
+    },
+    {
+      "question": "Did the areas of trees change?",
+      "answer": "yes",
+      "confidence": 100.0,
+      "method": "grounded",
+      "details": "Detected tree changed area: 2.8%"
+    },
+    {
+      "question": "What type of change is the largest?",
+      "answer": "NVG_surface",
+      "confidence": 100.0,
+      "method": "grounded",
+      "details": "Largest detected change area: non-vegetated ground surface"
+    }
+  ],
+  "dashboard_image": "dashboard_10_08871.png"
+}
